@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3ah88w3ylst4"]
+
+[ext_resource type="Script" uid="uid://73kd70ebxwof" path="res://scenes/ui/back.gd" id="1_3ts0u"]
+[ext_resource type="PackedScene" uid="uid://c8rcuf5mwuojl" path="res://scenes/ui/button/button.tscn" id="2_m70nr"]
+[ext_resource type="Theme" uid="uid://bnee2nh36sxen" path="res://resources/default_theme.tres" id="2_mqytc"]
+
+[node name="Credits" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_3ts0u")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_mqytc")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(250, 300)
+layout_mode = 2
+theme = ExtResource("2_mqytc")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("2_mqytc")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_mqytc")
+
+[node name="BackButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_m70nr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(84, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+text = "Back"

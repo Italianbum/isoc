@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8rcuf5mwuojl"]
+
+[ext_resource type="Theme" uid="uid://bnee2nh36sxen" path="res://resources/default_theme.tres" id="1_nba8a"]
+
+[node name="Button" type="Button"]
+theme = ExtResource("1_nba8a")
+text = "button"

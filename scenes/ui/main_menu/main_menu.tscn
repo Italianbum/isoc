@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8wh7rvdu3r34"]
+
+[ext_resource type="Script" uid="uid://rqvtrptjxvax" path="res://scenes/ui/main_menu/main_menu.gd" id="1_1kxbh"]
+[ext_resource type="PackedScene" uid="uid://c8rcuf5mwuojl" path="res://scenes/ui/button/button.tscn" id="2_osrxe"]
+[ext_resource type="Theme" uid="uid://bnee2nh36sxen" path="res://resources/default_theme.tres" id="2_qt1dd"]
+
+[node name="main_menu" type="CanvasLayer"]
+script = ExtResource("1_1kxbh")
+
+[node name="SoundPanel" type="PanelContainer" parent="."]
+visible = false
+offset_left = 37.0
+offset_top = 452.0
+offset_right = 246.0
+offset_bottom = 629.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SoundPanel"]
+layout_mode = 2
+theme = ExtResource("2_qt1dd")
+theme_override_constants/separation = 16
+
+[node name="SfxOptionsContainer" type="VBoxContainer" parent="SoundPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qt1dd")
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="SoundPanel/VBoxContainer/SfxOptionsContainer"]
+layout_mode = 2
+theme = ExtResource("2_qt1dd")
+theme_override_font_sizes/font_size = 25
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="SfxSlider" type="HSlider" parent="SoundPanel/VBoxContainer/SfxOptionsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_qt1dd")
+max_value = 3.0
+step = 0.01
+
+[node name="MusicOptionsContainer" type="VBoxContainer" parent="SoundPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qt1dd")
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="SoundPanel/VBoxContainer/MusicOptionsContainer"]
+layout_mode = 2
+theme = ExtResource("2_qt1dd")
+theme_override_font_sizes/font_size = 25
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="SoundPanel/VBoxContainer/MusicOptionsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_qt1dd")
+max_value = 3.0
+step = 0.01
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -137.5
+offset_right = 91.0
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qt1dd")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_qt1dd")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("2_qt1dd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_qt1dd")
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qt1dd")
+theme_override_font_sizes/font_size = 35
+text = "Game Name"
+horizontal_alignment = 1
+
+[node name="PlayButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_osrxe")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Play"
+
+[node name="OptionsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_osrxe")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Options"
+
+[node name="CreditsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_osrxe")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Credits"
+
+[node name="QuitButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_osrxe")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Quit"
