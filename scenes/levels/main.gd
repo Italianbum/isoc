@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 const PAUSE_MENU: PackedScene = preload("res://scenes/ui/pause_menu/pause_menu.tscn")
 
