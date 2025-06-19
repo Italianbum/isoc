@@ -1,3 +1,3 @@
-class_name patient
+extends Node
 
 pass

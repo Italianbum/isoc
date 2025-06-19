@@ -54,25 +54,29 @@ theme = ExtResource("3_j4d2a")
 text = "Interview"
 horizontal_alignment = 1
 
-[node name="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_u81e1")]
+[node name="ChatButton1" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "How are you feeling?"
 autowrap_mode = 3
 
-[node name="Button2" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_u81e1")]
+[node name="ChatButton2" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Does anything hurt?"
 autowrap_mode = 3
 
-[node name="Button3" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_u81e1")]
+[node name="ChatButton3" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "How can I help?"
 autowrap_mode = 3
 
-[node name="Button4" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_u81e1")]
+[node name="ChatButton4" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Have you taken your medications?"
@@ -90,6 +94,7 @@ text = "Bio"
 horizontal_alignment = 1
 
 [node name="BioLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(204, 272)
 layout_mode = 2
 theme = ExtResource("3_j4d2a")
@@ -114,6 +119,7 @@ theme = ExtResource("3_j4d2a")
 text = "Name:"
 
 [node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_j4d2a")
 text = "Jane Doe"
@@ -125,6 +131,7 @@ theme = ExtResource("3_j4d2a")
 text = "Age:"
 
 [node name="AgeLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_j4d2a")
 text = "49"
@@ -136,6 +143,7 @@ theme = ExtResource("3_j4d2a")
 text = "Blood Type:"
 
 [node name="BloodLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_j4d2a")
 text = "AB+"
@@ -147,6 +155,7 @@ theme = ExtResource("3_j4d2a")
 text = "Health:"
 
 [node name="HealthLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_j4d2a")
 text = "Critical"
@@ -158,6 +167,7 @@ theme = ExtResource("3_j4d2a")
 text = "Medical Directive:"
 
 [node name="DirectiveLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_j4d2a")
 text = "Reverse Blood Type"
@@ -173,37 +183,44 @@ layout_mode = 2
 text = "Treament"
 horizontal_alignment = 1
 
-[node name="Button" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+[node name="TreatButton1" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Prescribe Pill A"
 
-[node name="Button2" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+[node name="TreatButton2" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Prescribe Pill B"
 
-[node name="Button3" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+[node name="TreatButton3" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Prescribe Pill C"
 
-[node name="Button4" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+[node name="TreatButton4" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Prescribe Pill D"
 
-[node name="Button5" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+[node name="TreatButton5" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Sign Release"
 
-[node name="Button6" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+[node name="TreatButton6" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Admit to Hospice"
 
-[node name="Button7" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+[node name="TreatButton7" parent="MarginContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("4_u81e1")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Prescribe Placebo"

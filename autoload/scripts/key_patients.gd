@@ -23,7 +23,6 @@ var key_patients_act_one: Dictionary = {
 			"whatever that means. A real case we have before us."
 	}
 }
-
 var key_dialogue_act_one: Dictionary = {
 	"patient_1" : {
 		"question_1" : "Your sheet tells me you're a biter-nothing about being a shark, haha.",
@@ -49,7 +48,6 @@ var key_dialogue_act_one: Dictionary = {
 		"response_4" : "Thanks Doc"
 	}
 }
-
 var key_patients_act_two: Dictionary = {
 	"patient_1" : {
 		"name" : "Zbychu Nowak",
@@ -86,7 +84,6 @@ var key_patients_act_two: Dictionary = {
 		"What an idol we have here."
 	}
 }
-
 var key_dialogue_act_two: Dictionary = {
 	"patient_1" : {
 		"question_1" : "Well you speak today or well have to assigned you as not responsive the treatment well get more uncomfortable.",
@@ -162,7 +159,42 @@ var key_dialogue_act_two: Dictionary = {
 			]
 	},
 }
-
+var key_patients_act_three: Dictionary = {
+	"patient_1" : {
+		"name" : "Zbychu Nowak",
+		"age" : "28",
+		"blood_type" : 4,
+		"health" : 4,
+		"medical_directive" : 3,
+		"bio" : "Unknown, an anomaly but tough. Found passed out in an alley, he was brought to us." +
+			"Very hard to communicate with. The scars around his hands tell us this is no easy patient." +
+			"With the amount of fight he has caused throughout his time here, he might be better off in a more equipped facility."
+	},
+	"patient_2" : {
+		"name" : "Nathan Dedrick",
+		"age" : "37",
+		"blood_type" : 3,
+		"health" : 3,
+		"medical_directive" : 3,
+		"bio" : "Admitted here after countless hours of overtime and meeting all the deadlines." +
+			"One day, he just snapped. Now he runs around telling us he's the chief manager of the drones," +
+			"whatever that means. A real case we have before us. Not very receptive to interview questions." +
+			"Will try a more aggressive approach next time."
+	},
+	"patient_3" : {
+		"name" : "Sarah Queen",
+		"age" : "32",
+		"blood_type" : 2,
+		"health" : 2,
+		"medical_directive" : 3,
+		"bio" : "A fallen Rockstar, that's what we call her around here. " +
+		"Before being admitted to us, she toured all around the world. " +
+		"But one day, these guys showed up with the right paperwork, and we had to admit her. " +
+		"Even when I make my trips to the small fishing village on the weekends, " +
+		"I still see glimpses of the star power she once wielded. The locals still blast her songs. " +
+		"What an idol we have here."
+	}
+}
 var key_dialogue_act_three: Dictionary = {
 	"patient_1" : {
 		"question_1" : "I’m at a loss for words here. Seems communication isn’t our strong suit. " +
