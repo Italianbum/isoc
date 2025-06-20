@@ -224,3 +224,21 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Prescribe Placebo"
+
+[node name="DoctorLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 193.0
+offset_top = 273.0
+offset_right = 395.0
+offset_bottom = 338.0
+theme = ExtResource("3_j4d2a")
+autowrap_mode = 3
+
+[node name="PatientLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 706.0
+offset_top = 181.0
+offset_right = 857.0
+offset_bottom = 242.0
+theme = ExtResource("3_j4d2a")
+autowrap_mode = 3
