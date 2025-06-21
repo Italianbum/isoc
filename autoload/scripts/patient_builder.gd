@@ -1,6 +1,5 @@
 extends Node
 
-class_name Patients
 
 var first_names: Array[String] = [
 	"John", "Jane", "Michael", "Michelle", "Omar", "Gabreila", "Max", "Sofia", "Noah", "Ava",

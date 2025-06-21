@@ -35,7 +35,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
-	GameStates.current_patients = KeyPatients.key_patients_act_one
 	chat_button_1.pressed.connect((on_chat_button_pressed).bind(1))
 	chat_button_2.pressed.connect((on_chat_button_pressed).bind(2))
 	chat_button_3.pressed.connect((on_chat_button_pressed).bind(3))
@@ -47,8 +46,17 @@ func _ready() -> void:
 	treat_button_5.pressed.connect((on_treat_button_pressed).bind(5))
 	treat_button_6.pressed.connect((on_treat_button_pressed).bind(6))
 	treat_button_7.pressed.connect((on_treat_button_pressed).bind(7))
+	_build_patient_list()
 	_load_patient_data()
 
+func _build_patient_list() -> void:
+	print(GameStates.current_patients.size())
+	GameStates.current_patients = {
+	"patient_1" : PatientBuilder.create_patient(),
+	"patient_2" : PatientBuilder.create_patient(),
+	"patient_3" : PatientBuilder.create_patient()
+	}
+	print(GameStates.current_patients.size())
 
 func _load_patient_data() -> void:
 	patient_count += 1
