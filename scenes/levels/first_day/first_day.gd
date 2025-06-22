@@ -30,8 +30,13 @@ func _build_patient_list() -> void:
 			"patient_" + str(GameStates.current_patients.size() + 3): PatientBuilder.create_patient()
 		}
 		GameStates.first_run = false
+		GameStates.patient_count = 3
 	else:
-		GameStates.current_patients["patient_" + str(GameStates.current_patients.size() + 1)] =  PatientBuilder.create_patient()
+		if GameStates.patient_count >= 7:
+			pass
+		else:
+			GameStates.current_patients["patient_" + str(GameStates.current_patients.size() + 1)] =  PatientBuilder.create_patient()
+			GameStates.patient_count += 1
 	notebook.set_cases()
 
 

@@ -46,7 +46,6 @@ signal sig_end_day
 @onready var end_button: Button = $EndButton
 
 
-
 var current_page: int
 var pages: Array[StringName] = [&'page_0', &'page_1', &'page_2', &'page_3', &'page_4']
 var patient_count: int
@@ -58,6 +57,7 @@ var current_blood_type: int
 var current_directive: int
 var treatment: bool = false
 var current_case: int
+var current_patient: String
 
 
 func _ready() -> void:
@@ -129,19 +129,24 @@ func _load_patient_data(patient: int) -> void:
 	patient_count += 1
 	if !GameStates.current_patients.has(("patient_" + str(patient))):
 		return
+	current_patient = ("patient_" + str(patient))
+
 	chat_options = ChatOptions.chat_options.duplicate()
 	chat_options.shuffle()
 	chat_button_1.text = chat_options[0]
 	chat_button_2.text = chat_options[1]
 	chat_button_3.text = chat_options[2]
 	chat_button_4.text = chat_options[3]
-	bio_label.text  = GameStates.current_patients[("patient_" + str(patient))]["bio"]
-	name_label.text  = GameStates.current_patients[("patient_" + str(patient))]["name"]
-	age_label.text  = GameStates.current_patients[("patient_" + str(patient))]["age"]
-	blood_label.text  = _get_blood_type(GameStates.current_patients[("patient_" + str(patient))]["blood_type"])
-	health_label.text  = _get_health(GameStates.current_patients[("patient_" + str(patient))]["health"])
+
+	bio_label.text  = GameStates.current_patients[current_patient]["bio"]
+	name_label.text  = GameStates.current_patients[current_patient]["name"]
+	age_label.text  = GameStates.current_patients[current_patient]["age"]
+	blood_label.text  = _get_blood_type(GameStates.current_patients[current_patient]["blood_type"])
+	health_label.text  = _get_health(GameStates.current_patients[current_patient]["health"])
 	directive_label.text  = _get_directive()
 	_set_patient_text()
+	_set_patient_image()
+	_enable_treat_buttons()
 
 
 func _get_blood_type(index: int) -> String:
@@ -167,6 +172,7 @@ func _get_directive() -> String:
 	if current_blood_type <= 5 && current_health == 5:
 		current_directive = 2
 		return GameStates.medical_directives[2]
+
 	match current_blood_type:
 		0,2,4:
 			current_directive = 0
@@ -215,6 +221,23 @@ func _set_patient_text() -> void:
 	response_label_4.text = ChatOptions.chat_responses[chat_button_4.text][current_health]
 
 
+func _set_patient_image() -> void:
+	match name_label.text:
+		"Sarah Queen":
+			patient_image.animation = &"p2"
+		"Zbychu Nowak":
+			patient_image.animation = &"p1"
+		"Nathan Dedrick":
+			patient_image.animation = &"p3"
+
+	if name_label.text in ["Sarah Queen","Zbychu Nowak","Nathan Dedrick"]:
+		patient_image.flip_h = false
+		patient_image.modulate = Color(1.0,1.0,1.0,1.0)
+	else:
+		patient_image.flip_h = true
+		patient_image.modulate = Color(0.0,0.0,0.0,1.0)
+
+
 func _disable_case() -> void:
 	match current_case:
 		1:
@@ -248,6 +271,8 @@ func _check_end_day() -> void:
 
 
 func _on_treat_button_pressed(option: int) -> void:
+	_disable_treat_buttons()
+
 	match option:
 		0,1,2,3:
 			if option == current_directive:
@@ -269,6 +294,7 @@ func _on_treat_button_pressed(option: int) -> void:
 	_disable_case()
 	treatment = true
 	complete_button.visible = true
+	GameStates.patient_treated(current_patient,option, current_directive, current_health, current_blood_type)
 
 
 func _on_case_button_pressed(case: int) -> void:

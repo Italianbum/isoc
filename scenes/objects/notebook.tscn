@@ -507,7 +507,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3mi1n")
 }],
-"loop": true,
+"loop": false,
 "name": &"p1",
 "speed": 5.0
 }, {
@@ -515,7 +515,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q33ku")
 }],
-"loop": true,
+"loop": false,
 "name": &"p2",
 "speed": 5.0
 }, {
@@ -523,8 +523,22 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a1snw")
 }],
-"loop": true,
+"loop": false,
 "name": &"p3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mi1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1snw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q33ku")
+}],
+"loop": false,
+"name": &"random",
 "speed": 5.0
 }]
 
@@ -648,7 +662,7 @@ offset_bottom = 294.0
 position = Vector2(264, 230)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_viqtd")
-animation = &"p2"
+animation = &"random"
 
 [node name="HealthLabel" type="Label" parent="Page1"]
 unique_name_in_owner = true
