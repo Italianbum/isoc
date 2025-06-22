@@ -210,7 +210,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_yudf1")
 }],
 "loop": false,
-"name": &"default",
+"name": &"page_1",
 "speed": 10.0
 }, {
 "frames": [{
@@ -332,6 +332,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wt2df")
-animation = &"page_4"
-frame = 10
-frame_progress = 1.0
+animation = &"page_1"
