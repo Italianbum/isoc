@@ -399,7 +399,6 @@ animation = &"page_0"
 
 [node name="Page0" type="MarginContainer" parent="."]
 unique_name_in_owner = true
-visible = false
 offset_left = -223.0
 offset_top = -263.0
 offset_right = 224.0
@@ -413,12 +412,87 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_gko4n")
 
-[node name="Label" type="Label" parent="Page0/PanelContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Page0/PanelContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
+
+[node name="CaseButton1" parent="Page0/PanelContainer/HBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 6
 text = "Case 1"
-horizontal_alignment = 1
+
+[node name="CaseButton2" parent="Page0/PanelContainer/HBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 6
+text = "Case 2"
+
+[node name="CaseButton3" parent="Page0/PanelContainer/HBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 6
+text = "Case 3"
+
+[node name="CaseButton4" parent="Page0/PanelContainer/HBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 6
+text = "Case 4"
+
+[node name="CaseButton5" parent="Page0/PanelContainer/HBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 6
+text = "Case 5"
+
+[node name="CaseButton6" parent="Page0/PanelContainer/HBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 6
+text = "Case 6"
+
+[node name="CaseButton7" parent="Page0/PanelContainer/HBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 6
+text = "Case 7"
+
+[node name="CaseButton8" parent="Page0/PanelContainer/HBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 6
+text = "Case 8"
+
+[node name="CaseButton9" parent="Page0/PanelContainer/HBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 6
+text = "Case 9"
+
+[node name="CaseButton10" parent="Page0/PanelContainer/HBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_vertical = 6
+text = "Case 10"
 
 [node name="Page1" type="Control" parent="."]
 unique_name_in_owner = true
@@ -505,6 +579,7 @@ vertical_alignment = 1
 [node name="BioLabel" type="Label" parent="Page1"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(348, 93)
+layout_mode = 0
 offset_left = 50.0
 offset_top = 407.0
 offset_right = 398.0
