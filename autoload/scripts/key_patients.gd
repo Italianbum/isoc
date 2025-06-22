@@ -1,18 +1,18 @@
 extends Node
 
 
-var key_patients_act_one: Dictionary = {
-	"patient_1" : {
+var key_patient_1: Dictionary = {
 		"name" : "Zbychu Nowak",
 		"age" : "28",
-		"blood_type" : 4,
+		"blood_type" : 1,
 		"health" : 1,
 		"medical_directive" : 3,
 		"bio" : "Unknown, an anomaly but tough. Found passed out in an alley, he was brought to us." +
 			"Very hard to communicate with. The scars around his hands tell us this is no easy patient." +
 			"With the amount of fight he has caused throughout his time here, he might be better off in a more equipped facility."
-	},
-	"patient_2" : {
+	}
+
+var key_patient_2: Dictionary = {
 		"name" : "Nathan Dedrick",
 		"age" : "37",
 		"blood_type" : 3,
@@ -22,9 +22,23 @@ var key_patients_act_one: Dictionary = {
 			"One day, he just snapped. Now he runs around telling us he's the chief manager of the drones," +
 			"whatever that means. A real case we have before us."
 	}
-}
+
+var key_patient_3: Dictionary = {
+		"name" : "Sarah Queen",
+		"age" : "32",
+		"blood_type" : 5,
+		"health" : 0,
+		"medical_directive" : 3,
+		"bio" : "A fallen Rockstar, that's what we call her around here. " +
+		"Before being admitted to us, she toured all around the world. " +
+		"But one day, these guys showed up with the right paperwork, and we had to admit her. " +
+		"Even when I make my trips to the small fishing village on the weekends, " +
+		"I still see glimpses of the star power she once wielded. The locals still blast her songs. " +
+		"What an idol we have here."
+	}
+
 var key_dialogue_act_one: Dictionary = {
-	"patient_1" : {
+	"Zbychu Nowak" : {
 		"question_1" : "Your sheet tells me you're a biter-nothing about being a shark, haha.",
 		"response_1" : "Ok.",
 		"question_2" : "How are you feeling today?",
@@ -34,7 +48,7 @@ var key_dialogue_act_one: Dictionary = {
 		"question_4" : "I'll note that you're being very unresponsive, and we'll offer...[Select a treatment]",
 		"response_4" : "mhm"
 	},
-	"patient_2" : {
+	"Nathan Dedrick" : {
 		"question_1" : "Have you had time to go outside? I've been hearing you're indoors all day, locked up in your room.",
 		"response_1" : "Did you know one time we had a guy with red eyes who would only come in at night?" +
 			"He was the boss. I was the chief manager, so I had it good never having to meet him at night.",
@@ -48,44 +62,9 @@ var key_dialogue_act_one: Dictionary = {
 		"response_4" : "Thanks Doc"
 	}
 }
-var key_patients_act_two: Dictionary = {
-	"patient_1" : {
-		"name" : "Zbychu Nowak",
-		"age" : "28",
-		"blood_type" : 4,
-		"health" : 2,
-		"medical_directive" : 3,
-		"bio" : "Unknown, an anomaly but tough. Found passed out in an alley, he was brought to us." +
-			"Very hard to communicate with. The scars around his hands tell us this is no easy patient." +
-			"With the amount of fight he has caused throughout his time here, he might be better off in a more equipped facility."
-	},
-	"patient_2" : {
-		"name" : "Nathan Dedrick",
-		"age" : "37",
-		"blood_type" : 3,
-		"health" : 1,
-		"medical_directive" : 3,
-		"bio" : "Admitted here after countless hours of overtime and meeting all the deadlines." +
-			"One day, he just snapped. Now he runs around telling us he's the chief manager of the drones," +
-			"whatever that means. A real case we have before us. Not very receptive to interview questions." +
-			"Will try a more aggressive approach next time."
-	},
-	"patient_3" : {
-		"name" : "Sarah Queen",
-		"age" : "32",
-		"blood_type" : 2,
-		"health" : 0,
-		"medical_directive" : 3,
-		"bio" : "A fallen Rockstar, that's what we call her around here. " +
-		"Before being admitted to us, she toured all around the world. " +
-		"But one day, these guys showed up with the right paperwork, and we had to admit her. " +
-		"Even when I make my trips to the small fishing village on the weekends, " +
-		"I still see glimpses of the star power she once wielded. The locals still blast her songs. " +
-		"What an idol we have here."
-	}
-}
+
 var key_dialogue_act_two: Dictionary = {
-	"patient_1" : {
+	"Zbychu Nowak" : {
 		"question_1" : "Well you speak today or well have to assigned you as not responsive the treatment well get more uncomfortable.",
 		"response_1" : "What the hell?",
 		"question_2" : "Better response. Although not the choice words I would choose. " +
@@ -97,7 +76,7 @@ var key_dialogue_act_two: Dictionary = {
 		"question_4" : "Okay well, I think we'll mark todays session as done. I'm leaving you with...[Select a treatment]",
 		"response_4" : "Ya"
 	},
-	"patient_2" : {
+	"Nathan Dedrick" : {
 		"question_1" : "How did you rest?",
 		"response_1" : [
 			"Funny enough, not much. Last night I dreamed the bossman was around. " +
@@ -132,7 +111,7 @@ var key_dialogue_act_two: Dictionary = {
 			],
 		"response_4" : "Thanks Doc"
 	},
-	"patient_3" : {
+	"Sarah Queen" : {
 		"question_1" : "We’ve got a star locked and loaded boom! Stardust we wield, and stand your power! " +
 		"What a song, Sarah! How are you enjoying yourself? I know we're no 5‑star hotel, but I'm hoping you make a recovery.",
 		"response_1" : "Give me a break, Doc. We all know this isn’t right. " +
@@ -159,44 +138,9 @@ var key_dialogue_act_two: Dictionary = {
 			]
 	},
 }
-var key_patients_act_three: Dictionary = {
-	"patient_1" : {
-		"name" : "Zbychu Nowak",
-		"age" : "28",
-		"blood_type" : 4,
-		"health" : 4,
-		"medical_directive" : 3,
-		"bio" : "Unknown, an anomaly but tough. Found passed out in an alley, he was brought to us." +
-			"Very hard to communicate with. The scars around his hands tell us this is no easy patient." +
-			"With the amount of fight he has caused throughout his time here, he might be better off in a more equipped facility."
-	},
-	"patient_2" : {
-		"name" : "Nathan Dedrick",
-		"age" : "37",
-		"blood_type" : 3,
-		"health" : 3,
-		"medical_directive" : 3,
-		"bio" : "Admitted here after countless hours of overtime and meeting all the deadlines." +
-			"One day, he just snapped. Now he runs around telling us he's the chief manager of the drones," +
-			"whatever that means. A real case we have before us. Not very receptive to interview questions." +
-			"Will try a more aggressive approach next time."
-	},
-	"patient_3" : {
-		"name" : "Sarah Queen",
-		"age" : "32",
-		"blood_type" : 2,
-		"health" : 2,
-		"medical_directive" : 3,
-		"bio" : "A fallen Rockstar, that's what we call her around here. " +
-		"Before being admitted to us, she toured all around the world. " +
-		"But one day, these guys showed up with the right paperwork, and we had to admit her. " +
-		"Even when I make my trips to the small fishing village on the weekends, " +
-		"I still see glimpses of the star power she once wielded. The locals still blast her songs. " +
-		"What an idol we have here."
-	}
-}
+
 var key_dialogue_act_three: Dictionary = {
-	"patient_1" : {
+	"Zbychu Nowak" : {
 		"question_1" : "I’m at a loss for words here. Seems communication isn’t our strong suit. " +
 		"I'm not a fighter...and I'm sorry if, as your doctor, I've failed you.",
 		"response_1" : "No.",
@@ -207,7 +151,7 @@ var key_dialogue_act_three: Dictionary = {
 		"question_4" : "Okay...well, I recommend you go see the medical director...or you let them out",
 		"response_4" : "Ya...[Select a treatment]"
 	},
-	"patient_2" : {
+	"Nathan Dedrick" : {
 		"question_1" : [
 			"I've gotten some concerning reports about you.",
 			"Listen, Nathan, it's been a long day. We've yet to find any basis for your claims."
@@ -249,7 +193,7 @@ var key_dialogue_act_three: Dictionary = {
 			"I hope you don’t regret this."
 			]
 	},
-	"patient_3" : {
+	"Sarah Queen" : {
 		"question_1" : "Your patterns are odd. We’ve received compliments from those in our care, " +
 			"but none have come from the staff themselves.",
 		"response_1" : "What can I say? Maybe I’m getting the VIP treatment. " +
