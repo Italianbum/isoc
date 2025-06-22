@@ -51,6 +51,8 @@ var chat_options: Array
 var chat_count: int = 0
 var current_health: int
 var cases: Array[Button]
+var current_blood_type: int
+var current_directive: int
 
 
 func _ready() -> void:
@@ -68,18 +70,13 @@ func _ready() -> void:
 	case_button_9.pressed.connect((_on_case_button_pressed).bind(9))
 	case_button_10.pressed.connect((_on_case_button_pressed).bind(10))
 
-	chat_button_1.pressed.connect((_on_chat_button_pressed).bind(1))
-	chat_button_2.pressed.connect((_on_chat_button_pressed).bind(2))
-	chat_button_3.pressed.connect((_on_chat_button_pressed).bind(3))
-	chat_button_4.pressed.connect((_on_chat_button_pressed).bind(4))
-
-	treat_button_1.pressed.connect((_on_treat_button_pressed).bind(1))
-	treat_button_2.pressed.connect((_on_treat_button_pressed).bind(2))
-	treat_button_3.pressed.connect((_on_treat_button_pressed).bind(3))
-	treat_button_4.pressed.connect((_on_treat_button_pressed).bind(4))
-	treat_button_5.pressed.connect((_on_treat_button_pressed).bind(5))
-	treat_button_6.pressed.connect((_on_treat_button_pressed).bind(6))
-	treat_button_7.pressed.connect((_on_treat_button_pressed).bind(7))
+	treat_button_1.pressed.connect((_on_treat_button_pressed).bind(0))
+	treat_button_2.pressed.connect((_on_treat_button_pressed).bind(1))
+	treat_button_3.pressed.connect((_on_treat_button_pressed).bind(2))
+	treat_button_4.pressed.connect((_on_treat_button_pressed).bind(3))
+	treat_button_5.pressed.connect((_on_treat_button_pressed).bind(4))
+	treat_button_6.pressed.connect((_on_treat_button_pressed).bind(5))
+	treat_button_7.pressed.connect((_on_treat_button_pressed).bind(6))
 
 	cases = [
 		case_button_1, case_button_2, case_button_3, case_button_4, case_button_5,
@@ -124,24 +121,42 @@ func _load_patient_data(patient: int) -> void:
 	chat_button_2.text = chat_options[1]
 	chat_button_3.text = chat_options[2]
 	chat_button_4.text = chat_options[3]
-	_disable_treat_buttons()
-	_enable_chat_buttons()
 	bio_label.text  = GameStates.current_patients[("patient_" + str(patient))]["bio"]
 	name_label.text  = GameStates.current_patients[("patient_" + str(patient))]["name"]
 	age_label.text  = GameStates.current_patients[("patient_" + str(patient))]["age"]
 	blood_label.text  = _get_blood_type(GameStates.current_patients[("patient_" + str(patient))]["blood_type"])
 	health_label.text  = _get_health(GameStates.current_patients[("patient_" + str(patient))]["health"])
-	directive_label.text  = _get_directive(GameStates.current_patients[("patient_" + str(patient))]["medical_directive"])
+	directive_label.text  = _get_directive()
+	_set_patient_text()
 
 func _get_blood_type(index: int) -> String:
+	current_blood_type = index
 	return GameStates.blood_types[index]
 
 func _get_health(index: int) -> String:
 	current_health = index
 	return GameStates.health_statuses[index]
 
-func _get_directive(index: int) -> String:
-	return GameStates.medical_directives[index]
+func _get_directive() -> String:
+	print(current_blood_type)
+	if current_health == 6:
+		current_directive = 4
+		return GameStates.medical_directives[4]
+	if current_blood_type == 7:
+		return GameStates.medical_directives[5]
+	if current_blood_type == 6:
+		return GameStates.medical_directives[0]
+	if current_blood_type <= 5 && current_health == 5:
+		return GameStates.medical_directives[2]
+	match current_blood_type:
+		0,2,4:
+			return GameStates.medical_directives[0]
+		1:
+			return GameStates.medical_directives[1]
+		3,5:
+			return GameStates.medical_directives[3]
+
+	return "Treat"
 
 func _enable_treat_buttons() -> void:
 	treat_button_1.disabled = false
@@ -167,58 +182,32 @@ func _enable_chat_buttons() -> void:
 	chat_button_3.disabled = false
 	chat_button_4.disabled = false
 
-func _set_patient_text(prompt:String) -> void:
-	var _responses: Array = ChatOptions.chat_responses[prompt]
-	#var tween = create_tween()
-	#patient_label.text = _responses[current_health]
-	#tween.tween_property(patient_label,"visible_ratio", 1.0, clampf(0.1 * float(current_health),0.1,2.0))
-	#await tween.finished
-
-
-func _on_chat_button_pressed(option: int) -> void:
-	chat_count += 1
-	#var tween = create_tween()
-	#doctor_label.visible_ratio = 0.0
-	#patient_label.visible_ratio = 0.0
-
-	if chat_count >= 4:
-		_enable_treat_buttons()
-	if chat_options.size() > (3 + chat_count):
-		match option:
-			1:
-	#			doctor_label.text = chat_button_1.text
-				chat_button_1.text = chat_options[(3 + chat_count)]
-			2:
-	#			doctor_label.text = chat_button_2.text
-				chat_button_2.text = chat_options[(3 + chat_count)]
-			3:
-	#			doctor_label.text = chat_button_3.text
-				chat_button_3.text = chat_options[(3 + chat_count)]
-			4:
-	#			doctor_label.text = chat_button_4.text
-				chat_button_4.text = chat_options[(3 + chat_count)]
-	else:
-		match option:
-			1:
-	#			doctor_label.text = chat_button_1.text
-				chat_button_1.disabled = true
-			2:
-	#			doctor_label.text = chat_button_2.text
-				chat_button_2.disabled = true
-			3:
-	#			doctor_label.text = chat_button_3.text
-				chat_button_3.disabled = true
-			4:
-	#			doctor_label.text = chat_button_4.text
-				chat_button_4.disabled = true
-	#tween.tween_property(doctor_label,"visible_ratio", 1.0, 0.5)
-	#await tween.finished
-	#await get_tree().create_timer(.4).timeout
-	#_set_patient_text(doctor_label.text)
+func _set_patient_text() -> void:
+	response_label_1.text = ChatOptions.chat_responses[chat_button_1.text][current_health]
+	response_label_2.text = ChatOptions.chat_responses[chat_button_2.text][current_health]
+	response_label_3.text = ChatOptions.chat_responses[chat_button_3.text][current_health]
+	response_label_4.text = ChatOptions.chat_responses[chat_button_4.text][current_health]
 
 
 func _on_treat_button_pressed(option: int) -> void:
-	chat_count = 0
+	match option:
+		0,1,2,3:
+			if option == current_directive:
+				GameStates.score += 1
+			else:
+				GameStates.score -= 1
+		4:
+			GameStates.score -= 1
+		5:
+			if option == current_directive:
+				GameStates.score += 3
+			else:
+				GameStates.score -= 2
+		6:
+			if option == current_directive:
+				GameStates.score += 1
+			else:
+				GameStates.score -= 5
 
 
 func _on_case_button_pressed(case: int) -> void:

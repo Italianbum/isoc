@@ -21,8 +21,8 @@ func _ready() -> void:
 		sfx_slider.value = _get_bus_volume_percent("sfx")
 		music_slider.value = _get_bus_volume_percent("music")
 		sound_panel.visible = true
-		GameStates.first_run = false
-
+	GameStates.reset()
+	GameStates.first_run = true
 
 # launces main scene defined in ScreenTransition
 func _on_play_pressed() -> void:

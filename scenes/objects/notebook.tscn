@@ -625,33 +625,41 @@ vertical_alignment = 1
 
 [node name="ChatButton1" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_5ngql")]
 unique_name_in_owner = true
+layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+disabled = true
 text = "How are you feeling?"
 autowrap_mode = 3
 
 [node name="ChatButton2" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_5ngql")]
 unique_name_in_owner = true
+layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+disabled = true
 text = "Does anything hurt?"
 autowrap_mode = 3
 
 [node name="ChatButton3" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_5ngql")]
 unique_name_in_owner = true
+layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+disabled = true
 text = "How can I help?"
 autowrap_mode = 3
 
 [node name="ChatButton4" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_5ngql")]
 unique_name_in_owner = true
+layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+disabled = true
 text = "Have you taken your medications?"
 autowrap_mode = 3
 
@@ -798,12 +806,12 @@ unique_name_in_owner = true
 layout_direction = 3
 layout_mode = 2
 offset_left = 67.0
-offset_top = 419.0
+offset_top = 342.0
 offset_right = 224.0
-offset_bottom = 444.0
+offset_bottom = 368.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
-text = "Sign Release"
+text = "Prescribe Placebo"
 
 [node name="TreatButton6" parent="Page3" instance=ExtResource("6_5ngql")]
 unique_name_in_owner = true
@@ -822,12 +830,12 @@ unique_name_in_owner = true
 layout_direction = 3
 layout_mode = 2
 offset_left = 67.0
-offset_top = 342.0
+offset_top = 419.0
 offset_right = 224.0
-offset_bottom = 368.0
+offset_bottom = 444.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 12
-text = "Prescribe Placebo"
+text = "Sign Release"
 
 [node name="Pill" type="Sprite2D" parent="Page3"]
 position = Vector2(367, 225)
