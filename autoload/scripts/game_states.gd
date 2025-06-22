@@ -42,4 +42,5 @@ func patient_treated(patient: String, option: int, directive: int, health: int, 
 				6:
 					_patient_data["blood_type"] = 7
 
+	_patient_data["age"] += 1
 	current_patients[patient] = _patient_data
