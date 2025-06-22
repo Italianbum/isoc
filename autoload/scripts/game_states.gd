@@ -11,8 +11,8 @@ var day: bool = false
 var patient_count: int = 0
 var day_count: int = 0
 var current_act: Dictionary
-var manager_count_good: int
-var manager_count_bad: int
+var manager_count_good: int = 1
+var manager_count_bad: int = 8
 
 var key_patient_1: Dictionary = {
 		"name" : "Zbychu Nowak",
@@ -59,6 +59,8 @@ func reset() -> void:
 	patient_count = 0
 	day_count = 0
 	current_act = ChatOptions.key_dialogue_act_one
+	manager_count_good = 1
+	manager_count_bad = 8
 
 func patient_treated(patient: String, option: int, directive: int, health: int, blood_type: int) -> void:
 	var _patient_data = current_patients[patient]
