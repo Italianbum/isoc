@@ -1,10 +1,66 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7y7kh8k4adgv"]
+[gd_scene load_steps=13 format=3 uid="uid://c7y7kh8k4adgv"]
 
 [ext_resource type="Script" uid="uid://c2rijb2jalxpg" path="res://scenes/levels/first_day/first_day.gd" id="1_2p8u6"]
 [ext_resource type="Texture2D" uid="uid://ci3l7c5uygq6j" path="res://assets/sprites/bg.png" id="2_2p8u6"]
 [ext_resource type="AudioStream" uid="uid://kw6k3tqjuemh" path="res://assets/sfx/s_ambience_02.wav" id="2_vrcxr"]
 [ext_resource type="Theme" uid="uid://bnee2nh36sxen" path="res://resources/default_theme.tres" id="3_58l7c"]
 [ext_resource type="PackedScene" uid="uid://of3ji385usip" path="res://scenes/objects/notebook.tscn" id="3_crgxo"]
+[ext_resource type="Texture2D" uid="uid://3teok6akmtnk" path="res://assets/sprites/p_1.png" id="7_qp2xy"]
+[ext_resource type="Texture2D" uid="uid://c3cvjkahk4dpk" path="res://assets/sprites/p_2.png" id="8_c6qyo"]
+[ext_resource type="Texture2D" uid="uid://bo3eq11gcmw75" path="res://assets/sprites/p_3.png" id="9_oar0q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mi1n"]
+atlas = ExtResource("7_qp2xy")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q33ku"]
+atlas = ExtResource("8_c6qyo")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1snw"]
+atlas = ExtResource("9_oar0q")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12qex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mi1n")
+}],
+"loop": false,
+"name": &"p1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q33ku")
+}],
+"loop": false,
+"name": &"p2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1snw")
+}],
+"loop": false,
+"name": &"p3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mi1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1snw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q33ku")
+}],
+"loop": false,
+"name": &"random",
+"speed": 5.0
+}]
 
 [node name="FirstDay" type="Node2D"]
 script = ExtResource("1_2p8u6")
@@ -20,6 +76,7 @@ scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_2p8u6")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
 offset_left = 47.0
 offset_top = 403.0
 offset_right = 249.0
@@ -36,10 +93,11 @@ autowrap_mode = 3
 position = Vector2(567, 320)
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
-offset_left = 884.0
-offset_top = 183.0
-offset_right = 1086.0
-offset_bottom = 248.0
+visible = false
+offset_left = 825.0
+offset_top = 132.0
+offset_right = 1027.0
+offset_bottom = 197.0
 
 [node name="PatientLabel" type="Label" parent="PanelContainer2"]
 unique_name_in_owner = true
@@ -47,3 +105,11 @@ custom_minimum_size = Vector2(202, 65)
 layout_mode = 2
 theme = ExtResource("3_58l7c")
 autowrap_mode = 3
+
+[node name="PatientImage" type="AnimatedSprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 0)
+position = Vector2(1058, 285)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_12qex")
+animation = &"random"

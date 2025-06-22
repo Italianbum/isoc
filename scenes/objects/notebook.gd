@@ -152,6 +152,25 @@ func _load_patient_data(patient: int) -> void:
 	if name_label.text == "Zbychu Nowak" && GameStates.day_count in [2,5,8]:
 		_disable_treat_buttons()
 		play_scene.emit()
+		_set_special_text()
+	if name_label.text == "Nathan Dedrick" && GameStates.day_count in [4,6,8]:
+		_disable_treat_buttons()
+		play_scene.emit()
+		_set_special_text()
+	if name_label.text == "Sarah Queen" && GameStates.day_count in [6,8]:
+		_disable_treat_buttons()
+		play_scene.emit()
+		_set_special_text()
+
+func _set_special_text() -> void:
+	chat_button_1.text = GameStates.current_act[name_label.text]["question_1"]
+	chat_button_2.text = GameStates.current_act[name_label.text]["question_2"]
+	chat_button_3.text = GameStates.current_act[name_label.text]["question_3"]
+	chat_button_4.text = GameStates.current_act[name_label.text]["question_4"]
+	response_label_1.text = GameStates.current_act[name_label.text]["response_1"]
+	response_label_2.text = GameStates.current_act[name_label.text]["response_2"]
+	response_label_3.text = GameStates.current_act[name_label.text]["response_3"]
+	response_label_4.text = GameStates.current_act[name_label.text]["response_4"]
 
 
 func _get_blood_type(index: int) -> String:
@@ -278,7 +297,6 @@ func _check_end_day() -> void:
 
 
 func _on_treat_button_pressed(option: int) -> void:
-	_disable_treat_buttons()
 	match option:
 		0,1,2,3:
 			if option == current_directive:

@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://cc335cp3b3clc"]
+[gd_scene load_steps=3 format=3 uid="uid://cc335cp3b3clc"]
 
-[node name="Intro" type="Node"]
+[ext_resource type="Texture2D" uid="uid://ci3l7c5uygq6j" path="res://assets/sprites/bg.png" id="1_32kj4"]
+[ext_resource type="Theme" uid="uid://bnee2nh36sxen" path="res://resources/default_theme.tres" id="2_fdxju"]
+
+[node name="Cutscene" type="Node"]
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_32kj4")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 107.0
+offset_top = 401.0
+offset_right = 1001.0
+offset_bottom = 633.0
+
+[node name="ManagerLabel" type="Label" parent="PanelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(894, 232)
+layout_mode = 2
+theme = ExtResource("2_fdxju")
+autowrap_mode = 3
