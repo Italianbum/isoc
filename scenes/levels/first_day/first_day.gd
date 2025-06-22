@@ -89,4 +89,6 @@ func _on_end_day() -> void:
 		GameStates.day = true
 	else:
 		GameStates.day = false
+	if GameStates.day_count in [2,4,6,8] or GameStates.day_count > 8:
+		ScreenTransition.transition_to_scene("uid://cc335cp3b3clc")
 	ScreenTransition.transition_to_scene("uid://c7y7kh8k4adgv")
