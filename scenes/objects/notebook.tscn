@@ -1,12 +1,20 @@
-[gd_scene load_steps=51 format=3 uid="uid://of3ji385usip"]
+[gd_scene load_steps=65 format=3 uid="uid://of3ji385usip"]
 
 [ext_resource type="Script" uid="uid://drgwlnounid2c" path="res://scenes/objects/notebook.gd" id="1_5ngql"]
 [ext_resource type="Texture2D" uid="uid://c628rx1xyhn1" path="res://assets/sprites/notebookui2.png" id="1_bllar"]
 [ext_resource type="Texture2D" uid="uid://bnowd4ofjf31j" path="res://assets/sprites/notebookui3.png" id="2_l8qx4"]
 [ext_resource type="Texture2D" uid="uid://bsqgtp85rhrmb" path="res://assets/sprites/notebookui4.png" id="3_gfkf5"]
 [ext_resource type="Texture2D" uid="uid://der03n0e8a652" path="res://assets/sprites/notebookui5.png" id="4_sqpjv"]
+[ext_resource type="PackedScene" uid="uid://c8rcuf5mwuojl" path="res://scenes/ui/button/button.tscn" id="6_5ngql"]
 [ext_resource type="Theme" uid="uid://nk2cvd0547rq" path="res://resources/arrow_buttons.tres" id="6_ouqey"]
-[ext_resource type="Texture2D" uid="uid://bc8705aikc8ch" path="res://assets/sprites/left_arrow.png" id="7_f8n3c"]
+[ext_resource type="Texture2D" uid="uid://3teok6akmtnk" path="res://assets/sprites/p_1.png" id="8_ckjmm"]
+[ext_resource type="Texture2D" uid="uid://c3cvjkahk4dpk" path="res://assets/sprites/p_2.png" id="9_yudf1"]
+[ext_resource type="Texture2D" uid="uid://bo3eq11gcmw75" path="res://assets/sprites/p_3.png" id="10_wt2df"]
+[ext_resource type="Theme" uid="uid://bnee2nh36sxen" path="res://resources/default_theme.tres" id="11_hyha8"]
+[ext_resource type="Texture2D" uid="uid://bwpe7fmp37oa8" path="res://assets/sprites/pill_red.png" id="12_gko4n"]
+[ext_resource type="Texture2D" uid="uid://bvtln0ckto60x" path="res://assets/sprites/pill_yellow.png" id="13_dutg0"]
+[ext_resource type="Texture2D" uid="uid://01813iy66c7p" path="res://assets/sprites/pill_blue.png" id="14_7b75j"]
+[ext_resource type="Texture2D" uid="uid://cgjpgms3tcx2t" path="res://assets/sprites/pill_pink.png" id="15_c8t1b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8qx4"]
 atlas = ExtResource("1_bllar")
@@ -213,7 +221,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_yudf1")
 }],
 "loop": false,
-"name": &"page_1",
+"name": &"page_0",
 "speed": 10.0
 }, {
 "frames": [{
@@ -251,7 +259,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ymf6e")
 }],
 "loop": false,
-"name": &"page_2",
+"name": &"page_1",
 "speed": 10.0
 }, {
 "frames": [{
@@ -289,7 +297,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_n82k4")
 }],
 "loop": false,
-"name": &"page_3",
+"name": &"page_2",
 "speed": 10.0
 }, {
 "frames": [{
@@ -327,23 +335,618 @@ animations = [{
 "texture": SubResource("AtlasTexture_24y5q")
 }],
 "loop": false,
-"name": &"page_4",
+"name": &"page_3",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24y5q")
+}],
+"loop": true,
+"name": &"page_4",
+"speed": 5.0
 }]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gko4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mi1n"]
+atlas = ExtResource("8_ckjmm")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q33ku"]
+atlas = ExtResource("9_yudf1")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1snw"]
+atlas = ExtResource("10_wt2df")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_viqtd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mi1n")
+}],
+"loop": true,
+"name": &"p1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q33ku")
+}],
+"loop": true,
+"name": &"p2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1snw")
+}],
+"loop": true,
+"name": &"p3",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckjmm"]
 
 [node name="Notebook" type="Node2D"]
 script = ExtResource("1_5ngql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wt2df")
-animation = &"page_1"
-frame = 10
-frame_progress = 1.0
+animation = &"page_0"
 
-[node name="Button" type="Button" parent="."]
-offset_left = -204.0
-offset_top = 252.0
-offset_right = -151.0
-offset_bottom = 285.0
+[node name="Page0" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = -223.0
+offset_top = -263.0
+offset_right = 224.0
+offset_bottom = 294.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="PanelContainer" type="PanelContainer" parent="Page0"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gko4n")
+
+[node name="Label" type="Label" parent="Page0/PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Case 1"
+horizontal_alignment = 1
+
+[node name="Page1" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -223.0
+offset_top = -263.0
+offset_right = 224.0
+offset_bottom = 294.0
+
+[node name="PatientImage" type="AnimatedSprite2D" parent="Page1"]
+position = Vector2(264, 230)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_viqtd")
+animation = &"p2"
+
+[node name="HealthLabel" type="Label" parent="Page1"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 58.0
+offset_top = 375.0
+offset_right = 268.0
+offset_bottom = 398.0
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "Critical"
+horizontal_alignment = 1
+
+[node name="AgeLabel" type="Label" parent="Page1"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 149.0
+offset_top = 126.0
+offset_right = 273.0
+offset_bottom = 149.0
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "49"
+horizontal_alignment = 1
+
+[node name="RecordHeader" type="Label" parent="Page1"]
+layout_mode = 2
+anchor_left = 0.499
+anchor_top = 0.112
+anchor_right = 0.499
+anchor_bottom = 0.112
+offset_left = -166.053
+offset_top = -11.384
+offset_right = 164.947
+offset_bottom = 11.616
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Patient Records"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BloodLabel" type="Label" parent="Page1"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 29.0
+offset_top = 162.0
+offset_right = 125.0
+offset_bottom = 259.0
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "AB+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameLabel" type="Label" parent="Page1"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 57.0
+offset_top = 78.0
+offset_right = 387.0
+offset_bottom = 121.0
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+text = "Michelle Vanderwood"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BioLabel" type="Label" parent="Page1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(348, 93)
+offset_left = 50.0
+offset_top = 407.0
+offset_right = 398.0
+offset_bottom = 500.0
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "Rockstar  a fallen star, that’s what we call her around here. Before being admitted to us, she toured all around the world. But one day, these guys showed up with the right paperwork, and we had to admit her. Even when I make my trips to the small fishing village on the weekends, I still see glimpses of the star power she once wielded. The locals still blast her songs. What an idol we have here."
+autowrap_mode = 3
+
+[node name="Page2" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = -181.0
+offset_top = -146.0
+offset_right = 183.0
+offset_bottom = 223.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Page2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ckjmm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page2/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page2/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("11_hyha8")
+
+[node name="ChatHeader" type="Label" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "Interview"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChatButton1" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "How are you feeling?"
+autowrap_mode = 3
+
+[node name="ChatButton2" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "Does anything hurt?"
+autowrap_mode = 3
+
+[node name="ChatButton3" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "How can I help?"
+autowrap_mode = 3
+
+[node name="ChatButton4" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "Have you taken your medications?"
+autowrap_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page2/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("11_hyha8")
+
+[node name="ChatHeader" type="Label" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "Responses"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResponseLabel1" type="Label" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(178, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+text = "yes"
+autowrap_mode = 3
+
+[node name="ResponseLabel2" type="Label" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(178, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+text = "yes"
+autowrap_mode = 3
+
+[node name="ResponseLabel3" type="Label" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(178, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+text = "yes"
+autowrap_mode = 3
+
+[node name="ResponseLabel4" type="Label" parent="Page2/PanelContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(178, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+text = "yes"
+autowrap_mode = 3
+
+[node name="Page3" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -226.0
+offset_top = -264.0
+offset_right = 221.0
+offset_bottom = 293.0
+
+[node name="TreatmentHeader" type="Label" parent="Page3"]
+layout_mode = 2
+offset_left = 202.0
+offset_top = 161.0
+offset_right = 399.0
+offset_bottom = 198.0
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "Treatments"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DirectiveHeader" type="Label" parent="Page3"]
+layout_mode = 2
+offset_left = 39.0
+offset_top = 71.0
+offset_right = 313.0
+offset_bottom = 94.0
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "Medical Directive:"
+
+[node name="DirectiveLabel" type="Label" parent="Page3"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 88.0
+offset_top = 104.0
+offset_right = 362.0
+offset_bottom = 127.0
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+text = "Prescribe Pill C"
+horizontal_alignment = 1
+
+[node name="TreatButton1" parent="Page3" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 216.0
+offset_top = 212.0
+offset_right = 389.0
+offset_bottom = 237.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Prescribe Pill A"
+
+[node name="TreatButton2" parent="Page3" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 216.0
+offset_top = 244.0
+offset_right = 389.0
+offset_bottom = 269.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Prescribe Pill B"
+
+[node name="TreatButton3" parent="Page3" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 216.0
+offset_top = 277.0
+offset_right = 389.0
+offset_bottom = 302.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Prescribe Pill C"
+
+[node name="TreatButton4" parent="Page3" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 216.0
+offset_top = 309.0
+offset_right = 389.0
+offset_bottom = 334.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Prescribe Pill D"
+
+[node name="TreatButton5" parent="Page3" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_direction = 3
+layout_mode = 2
+offset_left = 67.0
+offset_top = 419.0
+offset_right = 224.0
+offset_bottom = 444.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Sign Release"
+
+[node name="TreatButton6" parent="Page3" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_direction = 3
+layout_mode = 2
+offset_left = 67.0
+offset_top = 381.0
+offset_right = 224.0
+offset_bottom = 406.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Admit to Hospice"
+
+[node name="TreatButton7" parent="Page3" instance=ExtResource("6_5ngql")]
+unique_name_in_owner = true
+layout_direction = 3
+layout_mode = 2
+offset_left = 67.0
+offset_top = 342.0
+offset_right = 224.0
+offset_bottom = 368.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Prescribe Placebo"
+
+[node name="Pill" type="Sprite2D" parent="Page3"]
+position = Vector2(367, 225)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("12_gko4n")
+
+[node name="Pill2" type="Sprite2D" parent="Page3"]
+position = Vector2(367, 256)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("13_dutg0")
+
+[node name="Pill6" type="Sprite2D" parent="Page3"]
+position = Vector2(367, 321)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("14_7b75j")
+
+[node name="Pill8" type="Sprite2D" parent="Page3"]
+self_modulate = Color(1, 4.762, 20.408, 1)
+position = Vector2(367, 355)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("12_gko4n")
+
+[node name="Pill9" type="Sprite2D" parent="Page3"]
+position = Vector2(367, 290)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("15_c8t1b")
+
+[node name="Page4" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pill" type="Sprite2D" parent="Page4"]
+position = Vector2(0, -47)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("12_gko4n")
+
+[node name="Pill2" type="Sprite2D" parent="Page4"]
+position = Vector2(25, 18)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("13_dutg0")
+
+[node name="Pill3" type="Sprite2D" parent="Page4"]
+position = Vector2(-25, 18)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("13_dutg0")
+
+[node name="Pill4" type="Sprite2D" parent="Page4"]
+position = Vector2(-74, 79)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("12_gko4n")
+
+[node name="Pill5" type="Sprite2D" parent="Page4"]
+position = Vector2(72, 79)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("12_gko4n")
+
+[node name="Pill6" type="Sprite2D" parent="Page4"]
+position = Vector2(-53, 140)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("14_7b75j")
+
+[node name="Pill7" type="Sprite2D" parent="Page4"]
+position = Vector2(51, 141)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("14_7b75j")
+
+[node name="Pill8" type="Sprite2D" parent="Page4"]
+position = Vector2(0, 201)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("12_gko4n")
+
+[node name="Pill9" type="Sprite2D" parent="Page4"]
+position = Vector2(0, 86)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("15_c8t1b")
+
+[node name="Label" type="Label" parent="Page4"]
+layout_mode = 0
+offset_left = -144.0
+offset_top = -175.0
+offset_right = 141.0
+offset_bottom = -147.0
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "Blood Chart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Page4"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -108.0
+offset_right = 25.0
+offset_bottom = -57.0
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "O+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Page4"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -36.0
+offset_right = 26.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0.289552, 0, 0, 1)
+text = "O-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Page4"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = 22.0
+offset_right = -25.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.472845, 0, 0, 1)
+text = "A+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Page4"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 76.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.472845, 0, 0, 1)
+text = "B+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Page4"]
+layout_mode = 0
+offset_left = -122.0
+offset_top = 84.0
+offset_right = -70.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(0.60183, 0, 0, 1)
+text = "A-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Page4"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 85.0
+offset_right = 120.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0.60183, 0, 0, 1)
+text = "B-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Page4"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = 141.0
+offset_right = 25.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0.730814, 0, 0, 1)
+text = "AB+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="Page4"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = 211.0
+offset_right = 25.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0.866588, 0, 0, 1)
+text = "AB-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftButton" parent="." instance=ExtResource("6_5ngql")]
+offset_left = -200.0
+offset_top = 261.0
+offset_right = -155.0
+offset_bottom = 286.0
 theme = ExtResource("6_ouqey")
-icon = ExtResource("7_f8n3c")
+text = ""
+metadata/_edit_use_anchors_ = true
+
+[node name="RightButton" parent="." instance=ExtResource("6_5ngql")]
+layout_direction = 3
+offset_left = -202.0
+offset_top = 261.0
+offset_right = -157.0
+offset_bottom = 286.0
+theme = ExtResource("6_ouqey")
+text = ""
+metadata/_edit_use_anchors_ = true

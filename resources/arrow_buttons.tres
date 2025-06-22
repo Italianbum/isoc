@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://nk2cvd0547rq"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://nk2cvd0547rq"]
 
 [ext_resource type="Texture2D" uid="uid://sn5i1xoqecfu" path="res://assets/sprites/left_arrow_3.png" id="1_d272g"]
 [ext_resource type="Texture2D" uid="uid://b2oy2hvxk5j1u" path="res://assets/sprites/right_arrow_3.png" id="2_dmpbg"]
@@ -10,6 +10,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_277fi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cud2h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d272g"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f52gl"]
 texture = ExtResource("1_d272g")
@@ -38,6 +40,7 @@ texture = ExtResource("4_pfte3")
 [resource]
 Button/styles/disabled = SubResource("StyleBoxEmpty_277fi")
 Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_cud2h")
+Button/styles/focus = SubResource("StyleBoxEmpty_d272g")
 Button/styles/hover = SubResource("StyleBoxTexture_f52gl")
 Button/styles/hover_mirrored = SubResource("StyleBoxTexture_6lhtu")
 Button/styles/hover_pressed = SubResource("StyleBoxTexture_bq10f")
