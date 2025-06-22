@@ -9,6 +9,7 @@ var current_patients: Dictionary
 var score: int = 0
 var day: bool = false
 var patient_count: int = 0
+var day_count: int = 0
 
 var key_patient_1: Dictionary = {
 		"name" : "Zbychu Nowak",
@@ -52,6 +53,8 @@ func reset() -> void:
 	score = 0
 	day = false
 	first_run = true
+	patient_count = 0
+	day_count = 0
 
 func patient_treated(patient: String, option: int, directive: int, health: int, blood_type: int) -> void:
 	var _patient_data = current_patients[patient]
@@ -83,3 +86,13 @@ func patient_treated(patient: String, option: int, directive: int, health: int, 
 
 	_patient_data["age"] = str(1 + int(_patient_data["age"]))
 	current_patients[patient] = _patient_data
+
+
+func add_key_patient() -> void:
+	match day_count:
+		2:
+			current_patients["patient_" + str(GameStates.current_patients.size() + 1)] = key_patient_1
+		4:
+			current_patients["patient_" + str(GameStates.current_patients.size() + 1)] = key_patient_2
+		6:
+			current_patients["patient_" + str(GameStates.current_patients.size() + 1)] = key_patient_3

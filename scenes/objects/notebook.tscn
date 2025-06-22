@@ -1231,3 +1231,24 @@ offset_right = 56.0
 offset_bottom = 288.0
 size_flags_vertical = 6
 text = "End Day"
+
+[node name="ResultsHeader" type="Label" parent="."]
+visible = false
+offset_left = -179.0
+offset_top = -263.0
+offset_right = -36.0
+offset_bottom = -240.667
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
+text = "From Managment:"
+
+[node name="ResultsLabel" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 34.0
+offset_top = -262.0
+offset_right = 180.0
+offset_bottom = -239.667
+theme = ExtResource("11_hyha8")
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+text = "You're doing great!"

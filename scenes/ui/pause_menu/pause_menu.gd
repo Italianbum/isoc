@@ -69,6 +69,7 @@ func _on_options_pressed() -> void:
 
 
 func _on_restart_pressed() -> void:
+	GameStates.reset()
 	var scene: String = get_parent().scene_file_path
 	get_tree().paused = false
 	ScreenTransition.transition_to_scene(scene)

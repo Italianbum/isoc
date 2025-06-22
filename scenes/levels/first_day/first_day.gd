@@ -13,6 +13,7 @@ var current_score: int = GameStates.score
 func _ready() -> void:
 	_build_patient_list()
 	notebook.sig_end_day.connect(_on_end_day)
+	notebook.play_scene.connect(_on_play_scene)
 
 
 func _input(event: InputEvent) -> void:
@@ -23,6 +24,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _build_patient_list() -> void:
+	GameStates.day_count += 1
 	if GameStates.first_run:
 		GameStates.current_patients = {
 			"patient_" + str(GameStates.current_patients.size() + 1) : PatientBuilder.create_patient(),
@@ -32,13 +34,27 @@ func _build_patient_list() -> void:
 		GameStates.first_run = false
 		GameStates.patient_count = 3
 	else:
-		if GameStates.patient_count >= 7:
+		if GameStates.day_count in [2,4,6]:
+			GameStates.add_key_patient()
+		elif GameStates.patient_count >= 7:
 			pass
 		else:
 			GameStates.current_patients["patient_" + str(GameStates.current_patients.size() + 1)] =  PatientBuilder.create_patient()
 			GameStates.patient_count += 1
 	notebook.set_cases()
 
+
+func _on_play_scene() -> void:
+	match notebook.name_label.text:
+		"Zbychu Nowak":
+			print("Zbychu Nowak")
+			notebook.enable_treat_buttons()
+		"Nathan Dedrick":
+			print("Nathan Dedrick")
+			notebook.enable_treat_buttons()
+		"Sarah Queen":
+			print("Sarah Queen")
+			notebook.enable_treat_buttons()
 
 func _on_end_day() -> void:
 	if GameStates.score > current_score:

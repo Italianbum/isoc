@@ -1,6 +1,7 @@
 extends Node2D
 
 signal sig_end_day
+signal play_scene
 
 @onready var left_button: Button = $LeftButton
 @onready var right_button: Button = $RightButton
@@ -147,7 +148,10 @@ func _load_patient_data(patient: int) -> void:
 	directive_label.text  = _get_directive()
 	_set_patient_text()
 	_set_patient_image()
-	_enable_treat_buttons()
+	enable_treat_buttons()
+	if name_label.text == "Zbychu Nowak" && GameStates.day_count in [2,5,8]:
+		_disable_treat_buttons()
+		play_scene.emit()
 
 
 func _get_blood_type(index: int) -> String:
@@ -162,8 +166,8 @@ func _get_health(index: int) -> String:
 
 func _get_directive() -> String:
 	if current_health == 6:
-		current_directive = 4
-		return GameStates.medical_directives[4]
+		current_directive = 6
+		return GameStates.medical_directives[6]
 	if current_blood_type == 7:
 		current_directive = 5
 		return GameStates.medical_directives[5]
@@ -188,7 +192,7 @@ func _get_directive() -> String:
 	return "Treat"
 
 
-func _enable_treat_buttons() -> void:
+func enable_treat_buttons() -> void:
 	treat_button_1.disabled = false
 	treat_button_2.disabled = false
 	treat_button_3.disabled = false
