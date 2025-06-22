@@ -26,7 +26,7 @@ func create_patient() -> Dictionary:
 		"age" : str(randi_range(18,80)),
 		"blood_type" : randi_range(0,7),
 		"health" : randi_range(1,5),
-		"medical_directive" : randi_range(1,7),
+		"medical_directive" : randi_range(1,6),
 		"bio" : bios[randi_range(0,19)]
 	}
 

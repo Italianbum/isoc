@@ -1,0 +1,71 @@
+[gd_scene load_steps=15 format=3 uid="uid://dewidapsl8qt7"]
+
+[ext_resource type="Script" uid="uid://daprecw04pjm0" path="res://autoload/manager_dialogue/manage_dialogue.gd" id="1_v047j"]
+[ext_resource type="AudioStream" uid="uid://dymbqhu4x17bi" path="res://assets/voice_lines/ad_monika.wav" id="2_p5i75"]
+[ext_resource type="AudioStream" uid="uid://la348vpsyoei" path="res://assets/voice_lines/agree_monika.wav" id="3_nrdt3"]
+[ext_resource type="AudioStream" uid="uid://bvatro64vppuc" path="res://assets/voice_lines/disagree_monika.wav" id="4_x0jt0"]
+[ext_resource type="AudioStream" uid="uid://cilkkf8rn15xp" path="res://assets/voice_lines/intro_monika.wav" id="5_gdaul"]
+[ext_resource type="AudioStream" uid="uid://s3f0wwjftgip" path="res://assets/voice_lines/pill_1_monika .wav" id="6_kqkn2"]
+[ext_resource type="AudioStream" uid="uid://c6eokj2rrt0li" path="res://assets/voice_lines/pill_2_monika.wav" id="7_ri8eu"]
+[ext_resource type="AudioStream" uid="uid://b8cy6lcwrpq21" path="res://assets/voice_lines/pill_3_monika .wav" id="8_h5bth"]
+[ext_resource type="AudioStream" uid="uid://b5rbwyldp6xks" path="res://assets/voice_lines/pill_4_monika.wav" id="9_wvjfw"]
+[ext_resource type="AudioStream" uid="uid://bf31gi2polj8n" path="res://assets/voice_lines/pill_5_monika.wav" id="10_mgj04"]
+[ext_resource type="AudioStream" uid="uid://dg841ldvjkoux" path="res://assets/voice_lines/saving_1_monika.wav" id="11_yeaaq"]
+[ext_resource type="AudioStream" uid="uid://dkdyfqor4nbrj" path="res://assets/voice_lines/saving_2_monika.wav" id="12_f0gbf"]
+[ext_resource type="AudioStream" uid="uid://bmojthhvjyk4v" path="res://assets/voice_lines/saving_3_monika.wav" id="13_mu88p"]
+[ext_resource type="AudioStream" uid="uid://cdrioov3xe57p" path="res://assets/voice_lines/saving_4_monika.wav" id="14_ao2sb"]
+
+[node name="ManagerDialogue" type="Node"]
+script = ExtResource("1_v047j")
+
+[node name="AdMonika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_p5i75")
+bus = &"dialogue"
+
+[node name="AgreeMonika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nrdt3")
+bus = &"dialogue"
+
+[node name="DisagreeMonika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_x0jt0")
+bus = &"dialogue"
+
+[node name="IntroMonika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gdaul")
+bus = &"dialogue"
+
+[node name="Pill1Monika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_kqkn2")
+bus = &"dialogue"
+
+[node name="Pill2Monika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ri8eu")
+bus = &"dialogue"
+
+[node name="Pill3Monika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_h5bth")
+bus = &"dialogue"
+
+[node name="Pill4Monika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_wvjfw")
+bus = &"dialogue"
+
+[node name="Pill5Monika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_mgj04")
+bus = &"dialogue"
+
+[node name="Saving1Monika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_yeaaq")
+bus = &"dialogue"
+
+[node name="Saving2Monika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_f0gbf")
+bus = &"dialogue"
+
+[node name="Saving3Monika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_mu88p")
+bus = &"dialogue"
+
+[node name="Saving4Monika" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_ao2sb")
+bus = &"dialogue"

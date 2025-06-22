@@ -28,6 +28,7 @@ GameStates="*res://autoload/scripts/game_states.gd"
 KeyPatients="*res://autoload/scripts/key_patients.gd"
 ChatOptions="*res://autoload/scripts/chat_options.gd"
 PatientBuilder="*res://autoload/scripts/patient_builder.gd"
+ManageDialogue="*res://autoload/manager_dialogue/manage_dialogue.tscn"
 
 [editor]
 
