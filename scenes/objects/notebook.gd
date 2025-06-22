@@ -234,6 +234,8 @@ func _set_patient_image() -> void:
 		patient_image.flip_h = false
 		patient_image.modulate = Color(1.0,1.0,1.0,1.0)
 	else:
+		patient_image.animation = &"random"
+		patient_image.frame = randi_range(0,2)
 		patient_image.flip_h = true
 		patient_image.modulate = Color(0.0,0.0,0.0,1.0)
 
