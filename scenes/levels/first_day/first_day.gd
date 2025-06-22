@@ -33,8 +33,8 @@ func _build_patient_list() -> void:
 		GameStates.current_act = ChatOptions.key_dialogue_act_one
 		GameStates.current_patients = {
 			"patient_" + str(GameStates.current_patients.size() + 1) : PatientBuilder.create_patient(),
-			#"patient_" + str(GameStates.current_patients.size() + 2): PatientBuilder.create_patient(),
-			#"patient_" + str(GameStates.current_patients.size() + 3): PatientBuilder.create_patient()
+			"patient_" + str(GameStates.current_patients.size() + 2): PatientBuilder.create_patient(),
+			"patient_" + str(GameStates.current_patients.size() + 3): PatientBuilder.create_patient()
 		}
 		GameStates.first_run = false
 		GameStates.patient_count = 3
