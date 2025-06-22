@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://7norg5cw8cci"]
+[gd_scene load_steps=4 format=3 uid="uid://7norg5cw8cci"]
 
 [ext_resource type="Script" uid="uid://28sejfu6dqyu" path="res://scenes/levels/main.gd" id="1_j7ue6"]
+[ext_resource type="Texture2D" uid="uid://ci3l7c5uygq6j" path="res://assets/sprites/bg.png" id="2_y0acb"]
 [ext_resource type="Theme" uid="uid://bnee2nh36sxen" path="res://resources/default_theme.tres" id="3_j4d2a"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_j7ue6")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("2_y0acb")
 
 [node name="ManagerLabel" type="Label" parent="."]
 unique_name_in_owner = true

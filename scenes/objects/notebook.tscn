@@ -345,6 +345,146 @@ animations = [{
 "loop": true,
 "name": &"page_4",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8qx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi5gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfkf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqpjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dwm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ngql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouqey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8n3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sqm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckjmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yudf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt2df")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyha8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gko4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dutg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b75j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8t1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51dq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a6y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38i23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgmj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymf6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymf6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4w33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rptl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kknl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxw6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc7xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gewtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt5bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn18c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hib2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n82k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n82k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ne3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbnp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmv6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pbve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mym6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feu84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4xsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v5ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxntp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24y5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24y5q")
+}],
+"loop": false,
+"name": &"return_to_0",
+"speed": 40.0
 }]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gko4n"]
@@ -395,7 +535,7 @@ script = ExtResource("1_5ngql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wt2df")
-animation = &"page_0"
+animation = &"return_to_0"
 
 [node name="Page0" type="MarginContainer" parent="."]
 unique_name_in_owner = true
@@ -1033,3 +1173,23 @@ offset_bottom = 286.0
 theme = ExtResource("6_ouqey")
 text = ""
 metadata/_edit_use_anchors_ = true
+
+[node name="CompleteButton" parent="." instance=ExtResource("6_5ngql")]
+visible = false
+layout_direction = 3
+offset_left = -59.0
+offset_top = 265.0
+offset_right = 56.0
+offset_bottom = 288.0
+size_flags_vertical = 6
+text = "Complete Case"
+
+[node name="EndButton" parent="." instance=ExtResource("6_5ngql")]
+visible = false
+layout_direction = 3
+offset_left = -59.0
+offset_top = 265.0
+offset_right = 56.0
+offset_bottom = 288.0
+size_flags_vertical = 6
+text = "End Day"

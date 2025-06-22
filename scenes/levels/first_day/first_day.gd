@@ -12,6 +12,7 @@ var current_score: int = GameStates.score
 
 func _ready() -> void:
 	_build_patient_list()
+	notebook.sig_end_day.connect(_on_end_day)
 
 
 func _input(event: InputEvent) -> void:
@@ -19,13 +20,6 @@ func _input(event: InputEvent) -> void:
 		add_child(PAUSE_MENU.instantiate())
 		get_tree().root.set_input_as_handled()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
-
-func end_day() -> void:
-	if GameStates.score > current_score:
-		GameStates.day = true
-	else:
-		GameStates.day = false
 
 
 func _build_patient_list() -> void:
@@ -37,7 +31,13 @@ func _build_patient_list() -> void:
 		}
 		GameStates.first_run = false
 	else:
-		GameStates.current_patients = {
-			"patient_" + str(GameStates.current_patients.size() + 1) : PatientBuilder.create_patient(),
-		}
+		GameStates.current_patients["patient_" + str(GameStates.current_patients.size() + 1)] =  PatientBuilder.create_patient()
 	notebook.set_cases()
+
+
+func _on_end_day() -> void:
+	if GameStates.score > current_score:
+		GameStates.day = true
+	else:
+		GameStates.day = false
+	ScreenTransition.transition_to_scene("uid://c7y7kh8k4adgv")
