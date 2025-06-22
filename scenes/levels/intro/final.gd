@@ -32,7 +32,7 @@ func _good_job() -> void:
 		6:
 			ManageDialogue.play_pill_5_monika()
 		7:
-			ManageDialogue.agree_monika
+			ManageDialogue.play_agree_monika()
 	manager_label.text = ManageDialogue.manager_text[GameStates.manager_count_good]
 
 	tween.tween_property(manager_label,"visible_ratio", 1.0, 26)

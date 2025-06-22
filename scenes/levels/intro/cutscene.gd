@@ -36,8 +36,8 @@ func _good_job() -> void:
 	await tween.finished
 	await get_tree().create_timer(2.0).timeout
 
-	if GameStates.manager_count_good == 4:
-		pass
+	if GameStates.manager_count_good == 5:
+		ScreenTransition.transition_to_scene("uid://d02yx5wbuhnlk")
 	else:
 		ScreenTransition.transition_to_scene("uid://c7y7kh8k4adgv")
 
@@ -46,17 +46,20 @@ func _bad_job() -> void:
 
 	manager_label.visible_ratio = 0.0
 	match GameStates.manager_count_good:
-		1:
+		9:
 			ManageDialogue.play_saving_1_monika()
-		2:
+		10:
 			ManageDialogue.play_saving_2_monika()
-		3:
+		11:
 			ManageDialogue.play_saving_3_monika()
-		4:
+		12:
 			ManageDialogue.play_saving_4_monika()
 	manager_label.text = ManageDialogue.manager_text[GameStates.manager_count_bad]
 
 	tween.tween_property(manager_label,"visible_ratio", 1.0, 23.49)
 	await tween.finished
 	await get_tree().create_timer(2.0).timeout
-	ScreenTransition.transition_to_scene("uid://c7y7kh8k4adgv")
+	if GameStates.manager_count_bad == 12:
+		ScreenTransition.transition_to_scene("uid://d02yx5wbuhnlk")
+	else:
+		ScreenTransition.transition_to_scene("uid://c7y7kh8k4adgv")
