@@ -19,8 +19,8 @@ var manager_text: Array[String] = [
 	Well, here on our island.          \n
 	You'll get the care you need and sunlight to bathe in. Our experienced staff is overflowing with dedication to help YOU get better.   \n
 	There's no such thing as a bad batch, just someone who needs a little time to bake and marinate in their thoughts. Isolated in a chamber of your own ideals, you'll come out with a clear mind.",
-	"Hey there, Welcome...to the team. The big man up top is excited to see what you bring to the table. Sorry he can't be here to greet you on your first day. He's...tied up at the moment. Anyways....          \n
-	Uh...give it your best, good or bad, I'm just sure you'll find a place to hang in our organization. But lets try for good, I'd hate to chew you out on your first day.          \n
+	"Hey there, Welcome...to the team. The big man up top is excited to see what you bring to the table. Sorry he can't be here to greet you on your first day. He's...tied up at the moment. Anyways....uh          \n
+	Give it your best, good or bad, I'm just sure you'll find a place to hang in our organization. But lets try for good, I'd hate to chew you out on your first day.          \n
 	Stick to our medical directives and you'll be fiiine.",
 	"Hey, awesome work, Doc. I've been talking to the boss. We might be throwing in an extra pudding cup for your lunch breaks. Just don't tell the others. Keep it up! I can just taste that you're going to do well here.",
 	"Showing promise and kindness, yummers, thanks for lunch! Wait... you have no idea what I'm talking about. But in due time, right? I just feel so ‘full' when reviewing your results.",

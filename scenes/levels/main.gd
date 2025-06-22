@@ -30,3 +30,4 @@ func _start_intro() -> void:
 	tween.tween_property(manager_label,"visible_ratio", 1.0, 23.49)
 	await tween.finished
 	await get_tree().create_timer(2.0).timeout
+	ScreenTransition.transition_to_scene("uid://c7y7kh8k4adgv")
