@@ -44,6 +44,7 @@ signal sig_end_day
 @onready var health_label: Label = %HealthLabel
 @onready var complete_button: Button = $CompleteButton
 @onready var end_button: Button = $EndButton
+@onready var pages_sfx: AudioStreamPlayer = $pages_sfx
 
 
 var current_page: int
@@ -274,7 +275,6 @@ func _check_end_day() -> void:
 
 func _on_treat_button_pressed(option: int) -> void:
 	_disable_treat_buttons()
-
 	match option:
 		0,1,2,3:
 			if option == current_directive:
@@ -314,6 +314,7 @@ func _on_button_pressed(button: bool) -> void:
 	page_3.visible = false
 	page_4.visible = false
 	complete_button.visible = false
+	pages_sfx.play()
 
 	if button:
 		current_page = clampi(current_page + 1, 0, 4)
@@ -359,7 +360,7 @@ func _on_complete_button_pressed() -> void:
 			_frame = 33
 		4:
 			_frame = 44
-
+	pages_sfx.play()
 	animated_sprite_2d.animation = &"return_to_0"
 	animated_sprite_2d.frame = _frame
 	animated_sprite_2d.play_backwards(&"return_to_0")

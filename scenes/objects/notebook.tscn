@@ -1,10 +1,14 @@
-[gd_scene load_steps=65 format=3 uid="uid://of3ji385usip"]
+[gd_scene load_steps=71 format=3 uid="uid://of3ji385usip"]
 
 [ext_resource type="Script" uid="uid://drgwlnounid2c" path="res://scenes/objects/notebook.gd" id="1_5ngql"]
 [ext_resource type="Texture2D" uid="uid://c628rx1xyhn1" path="res://assets/sprites/notebookui2.png" id="1_bllar"]
+[ext_resource type="AudioStream" uid="uid://ce3s46vb1guav" path="res://assets/sfx/s_ui_01.wav" id="2_51dq0"]
 [ext_resource type="Texture2D" uid="uid://bnowd4ofjf31j" path="res://assets/sprites/notebookui3.png" id="2_l8qx4"]
+[ext_resource type="AudioStream" uid="uid://c4twbucpt6p3c" path="res://assets/sfx/s_ui_02.wav" id="3_1a6y6"]
 [ext_resource type="Texture2D" uid="uid://bsqgtp85rhrmb" path="res://assets/sprites/notebookui4.png" id="3_gfkf5"]
+[ext_resource type="AudioStream" uid="uid://dnj1tk6e2tm64" path="res://assets/sfx/s_general_writing_01.wav" id="4_38i23"]
 [ext_resource type="Texture2D" uid="uid://der03n0e8a652" path="res://assets/sprites/notebookui5.png" id="4_sqpjv"]
+[ext_resource type="AudioStream" uid="uid://b3oxvh4qwnrmb" path="res://assets/sfx/s_general_writing_02.wav" id="5_dgmj6"]
 [ext_resource type="PackedScene" uid="uid://c8rcuf5mwuojl" path="res://scenes/ui/button/button.tscn" id="6_5ngql"]
 [ext_resource type="Theme" uid="uid://nk2cvd0547rq" path="res://resources/arrow_buttons.tres" id="6_ouqey"]
 [ext_resource type="Texture2D" uid="uid://3teok6akmtnk" path="res://assets/sprites/p_1.png" id="8_ckjmm"]
@@ -15,6 +19,16 @@
 [ext_resource type="Texture2D" uid="uid://bvtln0ckto60x" path="res://assets/sprites/pill_yellow.png" id="13_dutg0"]
 [ext_resource type="Texture2D" uid="uid://01813iy66c7p" path="res://assets/sprites/pill_blue.png" id="14_7b75j"]
 [ext_resource type="Texture2D" uid="uid://cgjpgms3tcx2t" path="res://assets/sprites/pill_pink.png" id="15_c8t1b"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ymf6e"]
+streams_count = 2
+stream_0/stream = ExtResource("2_51dq0")
+stream_1/stream = ExtResource("3_1a6y6")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x4w33"]
+streams_count = 2
+stream_0/stream = ExtResource("4_38i23")
+stream_1/stream = ExtResource("5_dgmj6")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8qx4"]
 atlas = ExtResource("1_bllar")
@@ -546,6 +560,16 @@ animations = [{
 
 [node name="Notebook" type="Node2D"]
 script = ExtResource("1_5ngql")
+
+[node name="pages_sfx" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_ymf6e")
+pitch_scale = 1.1
+bus = &"sfx"
+
+[node name="writing_sfx" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_x4w33")
+pitch_scale = 1.1
+bus = &"sfx"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wt2df")

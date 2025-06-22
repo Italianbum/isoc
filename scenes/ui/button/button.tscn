@@ -1,7 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8rcuf5mwuojl"]
+[gd_scene load_steps=6 format=3 uid="uid://c8rcuf5mwuojl"]
 
 [ext_resource type="Theme" uid="uid://bnee2nh36sxen" path="res://resources/default_theme.tres" id="1_nba8a"]
+[ext_resource type="Script" uid="uid://b3cvt8umr8mc2" path="res://scenes/ui/button/button.gd" id="2_8sve3"]
+[ext_resource type="AudioStream" uid="uid://dnj1tk6e2tm64" path="res://assets/sfx/s_general_writing_01.wav" id="2_lmleh"]
+[ext_resource type="AudioStream" uid="uid://b3oxvh4qwnrmb" path="res://assets/sfx/s_general_writing_02.wav" id="3_8sve3"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_83ewk"]
+streams_count = 2
+stream_0/stream = ExtResource("2_lmleh")
+stream_1/stream = ExtResource("3_8sve3")
 
 [node name="Button" type="Button"]
 theme = ExtResource("1_nba8a")
 text = "button"
+script = ExtResource("2_8sve3")
+
+[node name="writing_sfx" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_83ewk")
+pitch_scale = 1.1
+bus = &"sfx"
