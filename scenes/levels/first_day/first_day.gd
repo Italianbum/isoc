@@ -69,7 +69,9 @@ func _set_patient_image() -> void:
 
 
 
-func _fade_patient_image() -> void:
+func fade_patient_image() -> void:
+	if patient_image.modulate == Color(0.0,0.0,0.0,0.0):
+		return
 	var tween = create_tween()
 	tween.tween_property(patient_image,"modulate", Color(0.0,0.0,0.0,0.0), 3.0)
 

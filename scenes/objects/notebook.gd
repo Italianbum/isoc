@@ -319,6 +319,8 @@ func _on_treat_button_pressed(option: int) -> void:
 	treatment = true
 	complete_button.visible = true
 	GameStates.patient_treated(current_patient,option, current_directive, current_health, current_blood_type)
+	if name_label.text in ["Sarah Queen","Zbychu Nowak","Nathan Dedrick"]:
+		owner.fade_patient_image()
 
 
 func _on_case_button_pressed(case: int) -> void:

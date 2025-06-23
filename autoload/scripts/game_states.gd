@@ -62,6 +62,7 @@ func reset() -> void:
 	manager_count_good = 1
 	manager_count_bad = 8
 
+
 func patient_treated(patient: String, option: int, directive: int, health: int, blood_type: int) -> void:
 	var _patient_data = current_patients[patient]
 	if directive in [5,6]:
