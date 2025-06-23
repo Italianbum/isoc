@@ -12,27 +12,33 @@ func determine_cut_scene() -> void:
 		GameStates.manager_count_good += 1
 		_good_job()
 	else:
-		GameStates.manager_count_bad -= 1
+		GameStates.manager_count_bad += 1
 		_bad_job()
 
 
 func _good_job() -> void:
 	var tween = create_tween()
+	var audio_time: float
 
 	manager_label.visible_ratio = 0.0
+
 	match GameStates.manager_count_good:
 		2:
 			ManageDialogue.play_pill_1_monika()
+			audio_time = 10.82
 		3:
 			ManageDialogue.play_pill_2_monika()
+			audio_time = 11.90
 		4:
 			ManageDialogue.play_pill_3_monika()
+			audio_time = 13.46
 		5:
 			ManageDialogue.play_pill_4_monika()
+			audio_time = 5.15
 
 	manager_label.text = ManageDialogue.manager_text[GameStates.manager_count_good]
 
-	tween.tween_property(manager_label,"visible_ratio", 1.0, 26)
+	tween.tween_property(manager_label,"visible_ratio", 1.0, audio_time)
 	await tween.finished
 	await get_tree().create_timer(2.0).timeout
 
@@ -43,20 +49,26 @@ func _good_job() -> void:
 
 func _bad_job() -> void:
 	var tween = create_tween()
+	var audio_time: float
 
 	manager_label.visible_ratio = 0.0
 	match GameStates.manager_count_good:
 		9:
 			ManageDialogue.play_saving_1_monika()
+			audio_time = 9.10
 		10:
 			ManageDialogue.play_saving_2_monika()
+			audio_time = 11.93
 		11:
 			ManageDialogue.play_saving_3_monika()
+			audio_time = 6.62
 		12:
 			ManageDialogue.play_saving_4_monika()
+			audio_time = 19.95
+
 	manager_label.text = ManageDialogue.manager_text[GameStates.manager_count_bad]
 
-	tween.tween_property(manager_label,"visible_ratio", 1.0, 23.49)
+	tween.tween_property(manager_label,"visible_ratio", 1.0, audio_time)
 	await tween.finished
 	await get_tree().create_timer(2.0).timeout
 	if GameStates.manager_count_bad == 12:
