@@ -83,37 +83,35 @@ var key_dialogue_act_two: Dictionary = {
 	},
 	"Nathan Dedrick" : {
 		"question_1" : "How did you rest?",
-		"response_1" : [
+		"response_1" :
 			"Funny enough, not much. Last night I dreamed the bossman was around. " +
 			"We had a conversation not in my office, the highlight of my utopia! But in my room. " +
-			"You’d think if I could pick the location, it wouldn’t have been that.",
-			"Simplest way I could put it, Doc unwelcomed. All night I was dreaming I was working. " +
-			"Someone was trying to get my attention. I didn't open the door. Can't walk into another scandal... not again"
-			],
-		"question_2" : [
+			"You’d think if I could pick the location, it wouldn't have been that.",
+			#"Simplest way I could put it, Doc unwelcomed. All night I was dreaming I was working. " +
+			#"Someone was trying to get my attention. I didn't open the door. Can't walk into another scandal... not again",
+		"question_2" :
 			"Interesting. Would it be too far a stretch to say your boss is what caused this overworked version of yourself?",
-			"What are you even talking about?"
-			],
-		"response_2" : [
+			#"What are you even talking about?",#
+		"response_2" :
 			"What do you mean?",
-			"Doc, I've been nothing but cooperative. Even before I got here, " +
-			"people had a hard time understanding me. I don't always get to the point."
-			],
-		"question_3" : [
+			#"Doc, I've been nothing but cooperative. Even before I got here, " +
+			#"people had a hard time understanding me. I don't always get to the point."
+			#],
+		"question_3" : #[
 			"Maybe you're not actually good at your job, just making up numbers to stay in his favor?",
-			"We'll have to review my notes, but I will say, don't underestimate your wit. I've seen your file."
-			],
-		"response_3" : [
+			#"We'll have to review my notes, but I will say, don't underestimate your wit. I've seen your file."
+			#],
+		"response_3" : #[
 			"You’re funny, Doc. You should be a comedian. But ask yourself, " +
 			"as much as I ask myself if that were the case, how do you think I ended up here? " +
 			"He told me this was supposed to be my vacation. I won it for being Employee of the Year.",
-			"It's not like I'm a sly fox, I promise. My intentions are pure."
-			],
-		"question_4" : [
+			#"It's not like I'm a sly fox, I promise. My intentions are pure."
+			#],
+		"question_4" : #[
 			"Interesting. We're recovering some sense of truth, no matter how twisted it is. " +
-			"I think that marks the end of today's session...[Select a treatment]",
-			"I think that marks the end of today's session...[Select a treatment]"
-			],
+			"I think that marks the end of today's session...",
+			#"I think that marks the end of today's session...[Select a treatment]"
+			#],
 		"response_4" : "Thanks Doc"
 	},
 	"Sarah Queen" : {
@@ -129,18 +127,18 @@ var key_dialogue_act_two: Dictionary = {
 		"why not during the hours the mortals sleep?",
 		"question_3" : "Sarah, I’m going to suggest you take these...[Select a treatment]",
 		"response_3" : "What are they?",
-		"question_4" : [
+		"question_4" : #[
 			"Sleeping pills, they will help you rest.",
-			"Melatonin, it's a placebo that tricks your body its time to sleep.",
-			"Vitamins, it'll help you balance your energy so you get better rest when its time to sleep.",
-			"Medicine, it'll help with you with your illness. You'll be sleeping right in no time."
-			],
-		"response_4" :  [
+			#"Melatonin, it's a placebo that tricks your body its time to sleep.",
+			#"Vitamins, it'll help you balance your energy so you get better rest when its time to sleep.",
+			#"Medicine, it'll help with you with your illness. You'll be sleeping right in no time."
+			#],
+		"response_4" :  #[
 			"I hope it's the good stuff. Thanks Doc.",
-			"You prescribe melatonin? I can get this off the shelf...Good day Doc.",
-			"Hmmm, I have been eat less thhings with nutrition, I'll give it a try. Later Doc.",
-			"Medicine? Right...Have a Good day Doc."
-			]
+			#"You prescribe melatonin? I can get this off the shelf...Good day Doc.",
+			#"Hmmm, I have been eat less thhings with nutrition, I'll give it a try. Later Doc.",
+			#"Medicine? Right...Have a Good day Doc."
+			#]
 	},
 }
 
@@ -154,49 +152,49 @@ var key_dialogue_act_three: Dictionary = {
 		"question_3" : "How limited are your words? And how much can you understand?",
 		"response_3" : "Mhm...ya",
 		"question_4" : "Okay...well, I recommend you go see the medical director...or you let them out",
-		"response_4" : "Ya...[Select a treatment]"
+		"response_4" : "Ya..."
 	},
 	"Nathan Dedrick" : {
-		"question_1" : [
+		"question_1" : #[
 			"I've gotten some concerning reports about you.",
-			"Listen, Nathan, it's been a long day. We've yet to find any basis for your claims."
-			],
-		"response_1" : [
+			#"Listen, Nathan, it's been a long day. We've yet to find any basis for your claims."
+			#],
+		"response_1" : #[
 			"False.",
-			"I swear my boss has come by and visited me while I've been here. I have no idea how. " +
-			"And the work assignments...they've been the oddest requests I’ve ever heard."
-			],
-		"question_2" : [
+			#"I swear my boss has come by and visited me while I've been here. I have no idea how. " +
+			#"And the work assignments...they've been the oddest requests I’ve ever heard."
+			#],
+		"question_2" : #[
 			"I’ve always given you the benefit of the doubt I keep seeing light for you, " +
 			"but then you fall back into the darkness! What do I have to do to get you to understand we’re here for your benefit?",
-			"We'll move you to a different part of the facility. I think you'll be more comfortable there. " +
-			"And if your boss shows up, we'll know."
-			],
-		"response_2" : [
+			#"We'll move you to a different part of the facility. I think you'll be more comfortable there. " +
+			#"And if your boss shows up, we'll know."
+			#],
+		"response_2" : #[
 			"Then, if it's for my benefit, can I leave? There's a constant feeling I’m being watched. " +
 			"There’s no escape from the day staff to the night staff.",
-			"Doc, you’re treating me like I’ve lost it. I swear I’m all here as sane as one can be. " +
-			"What happened to giving your patients the benefit of the doubt?"
-			],
-		"question_3" : [
+			#"Doc, you’re treating me like I’ve lost it. I swear I’m all here as sane as one can be. " +
+			#"What happened to giving your patients the benefit of the doubt?"
+			#],
+		"question_3" : #[
 			"What staff? There’s only one person on the night shift.",
-			"Even the most lost patients, believe they are still in complete control."
-			],
-		"response_3" : [
+			#"Even the most lost patients, believe they are still in complete control."
+			#],
+		"response_3" : #[
 			"I heard someone being dragged out of their room.",
-			"I hope you don’t regret this."
-			],
-		"question_4" : [
-			"I’ve put in a request for you to leave the island while we investigate this occurrence. " +
-			"I’ve had a feeling for a while that there’s more to this job than just me being a doc. " +
-			"I raised cattle on my family farm it seems we’re repeating a lot of the same tasks.",
+			#"I hope you don’t regret this."
+			#],
+		"question_4" : #[
+			#"I’ve put in a request for you to leave the island while we investigate this occurrence. " +
+			#"I’ve had a feeling for a while that there’s more to this job than just me being a doc. " +
+			#"I raised cattle on my family farm it seems we’re repeating a lot of the same tasks.",
 			"We’ve been waiting for you to get up to speed with the real world. " +
-			"And we’re continuing to give you the same care we’re just moving you into some...better care."
-			],
-		"response_4" : [
-			"Stay safe, Doc.",
+			"And we’re continuing to give you the same care we’re just moving you into some...better care.",
+			#],
+		"response_4" : #[
+			#"Stay safe, Doc.",
 			"I hope you don’t regret this."
-			]
+			#]
 	},
 	"Sarah Queen" : {
 		"question_1" : "Your patterns are odd. We’ve received compliments from those in our care, " +
@@ -211,9 +209,9 @@ var key_dialogue_act_three: Dictionary = {
 		"response_2" : "There you go again, Doc leaving yourself wide open to my wit. " +
 			"You take so long to choose your words carefully and in the end—boom! " +
 			"The queen makes you bite the dust!",
-		"question_3" : "",
-		"response_3" : "",
-		"question_4" : "We’ll see how you’re feeling after...[Select a Treatment]",
+		"question_3" : "Is there something bothering?",
+		"response_3" : "It's not getting better. Everything we do makes it worse.",
+		"question_4" : "We’ll see how you’re feeling after...your treatment.]",
 		"response_4" : "I don't have high hopes.",
 	},
 }
