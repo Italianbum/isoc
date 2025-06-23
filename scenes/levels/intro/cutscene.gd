@@ -52,7 +52,7 @@ func _bad_job() -> void:
 	var audio_time: float
 
 	manager_label.visible_ratio = 0.0
-	match GameStates.manager_count_good:
+	match GameStates.manager_count_bad:
 		9:
 			ManageDialogue.play_saving_1_monika()
 			audio_time = 9.10
