@@ -1,16 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://d02yx5wbuhnlk"]
+[gd_scene load_steps=5 format=3 uid="uid://d02yx5wbuhnlk"]
 
 [ext_resource type="Script" uid="uid://d14f3ni47wjtf" path="res://scenes/levels/intro/final.gd" id="1_rkmp6"]
 [ext_resource type="Texture2D" uid="uid://c8g6i2y5wy4fc" path="res://assets/sprites/final.jpg" id="2_rkmp6"]
 [ext_resource type="Theme" uid="uid://bnee2nh36sxen" path="res://resources/default_theme.tres" id="3_0s6kk"]
+[ext_resource type="Texture2D" uid="uid://sqvulrnaud1w" path="res://assets/sprites/themanager.png" id="3_4b6xi"]
 
-[node name="Cutscene" type="Node"]
+[node name="Final" type="Node"]
 script = ExtResource("1_rkmp6")
 
 [node name="Bg" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_rkmp6")
+
+[node name="Themanager" type="Sprite2D" parent="."]
+position = Vector2(854, 390)
+scale = Vector2(2, 2)
+texture = ExtResource("3_4b6xi")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_left = 107.0

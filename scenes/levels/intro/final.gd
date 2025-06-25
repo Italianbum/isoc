@@ -12,12 +12,13 @@ func determine_cut_scene() -> void:
 		GameStates.manager_count_good += 1
 		_good_job()
 	else:
-		GameStates.manager_count_bad -= 1
+		GameStates.manager_count_bad += 1
 		_bad_job()
 
 
 func _good_job() -> void:
 	var tween = create_tween()
+	var audio_time: float
 
 	manager_label.visible_ratio = 0.0
 	match GameStates.manager_count_good:
@@ -33,19 +34,25 @@ func _good_job() -> void:
 			ManageDialogue.play_pill_5_monika()
 		7:
 			ManageDialogue.play_agree_monika()
+			audio_time = 19.00
+		8:
+			ManageDialogue.play_disagree_monika()
+			audio_time = 24.00
+
 	manager_label.text = ManageDialogue.manager_text[GameStates.manager_count_good]
 
-	tween.tween_property(manager_label,"visible_ratio", 1.0, 26)
+	tween.tween_property(manager_label,"visible_ratio", 1.0, audio_time)
 	await tween.finished
 	await get_tree().create_timer(2.0).timeout
 
-	if GameStates.manager_count_good == 6:
+	if GameStates.manager_count_ == 6:
 		determine_cut_scene()
 	else:
 		ScreenTransition.transition_to_scene("res://scenes/ui/main_menu/main_menu.tscn")
 
 func _bad_job() -> void:
 	var tween = create_tween()
+	var audio_time: float
 
 	manager_label.visible_ratio = 0.0
 	match GameStates.manager_count_good:
@@ -57,11 +64,12 @@ func _bad_job() -> void:
 			ManageDialogue.play_saving_3_monika()
 		12:
 			ManageDialogue.play_saving_4_monika()
-		13:
-			ManageDialogue.play_saving_4_monika()
+			audio_time = 20.50
+
+
 	manager_label.text = ManageDialogue.manager_text[GameStates.manager_count_bad]
 
-	tween.tween_property(manager_label,"visible_ratio", 1.0, 23.49)
+	tween.tween_property(manager_label,"visible_ratio", 1.0, audio_time)
 	await tween.finished
 	await get_tree().create_timer(2.0).timeout
 	ScreenTransition.transition_to_scene("res://scenes/ui/main_menu/main_menu.tscn")

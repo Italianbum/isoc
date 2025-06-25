@@ -865,7 +865,7 @@ custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "yes"
 autowrap_mode = 3
 
@@ -875,7 +875,7 @@ custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "yes"
 autowrap_mode = 3
 
@@ -885,7 +885,7 @@ custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "yes"
 autowrap_mode = 3
 
@@ -895,7 +895,7 @@ custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 text = "yes"
 autowrap_mode = 3
 
