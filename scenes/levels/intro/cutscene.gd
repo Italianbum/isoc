@@ -1,6 +1,7 @@
 extends Node
 
 @onready var manager_label: Label = %ManagerLabel
+@onready var themanager: Sprite2D = $Themanager
 
 
 
@@ -34,6 +35,7 @@ func _good_job() -> void:
 			audio_time = 13.46
 		5:
 			ManageDialogue.play_pill_4_monika()
+			themanager.visible = true
 			audio_time = 5.15
 
 	manager_label.text = ManageDialogue.manager_text[GameStates.manager_count_good]
@@ -62,6 +64,7 @@ func _bad_job() -> void:
 		11:
 			ManageDialogue.play_saving_3_monika()
 			audio_time = 6.62
+			themanager.visible = true
 		12:
 			ManageDialogue.play_saving_4_monika()
 			audio_time = 19.95

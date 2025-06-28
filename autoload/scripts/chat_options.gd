@@ -50,7 +50,7 @@ var key_dialogue_act_one: Dictionary = {
 		"response_2" : "Ok.",
 		"question_3" : "Anything but ok?",
 		"response_3" : "...Ya..",
-		"question_4" : "I'll note that you're being very unresponsive, and we'll offer...[Select a treatment]",
+		"question_4" : "I'll note that you're being very unresponsive, and we'll offer...",
 		"response_4" : "mhm"
 	},
 	"Nathan Dedrick" : {
@@ -63,7 +63,7 @@ var key_dialogue_act_one: Dictionary = {
 			"Boss man really trusts me.",
 		"question_3" : "What about a lunch break outside?",
 		"response_3" : "No, I can't leave until the work is done.",
-		"question_4" : "Well, I can leave you with this...[Select a treatment]",
+		"question_4" : "Well, I can leave you with this...",
 		"response_4" : "Thanks Doc"
 	}
 }
@@ -74,11 +74,11 @@ var key_dialogue_act_two: Dictionary = {
 		"response_1" : "What the hell?",
 		"question_2" : "Better response. Although not the choice words I would choose. " +
 			"Now want know why you fight us we not bad people honestly. " +
-			"Our staff is the best you will find on this island...and the only staff on the island",
+			"Our staff is the best you will find on this island.",
 		"response_2" : "Right...",
 		"question_3" : "Mow we are back to zero. Would you prefer simpler subject like the weather?",
 		"response_3" : "mmmm",
-		"question_4" : "Okay well, I think we'll mark todays session as done. I'm leaving you with...[Select a treatment]",
+		"question_4" : "Okay well, I think we'll mark todays session as done. I'm leaving you with...",
 		"response_4" : "Ya"
 	},
 	"Nathan Dedrick" : {
@@ -110,7 +110,7 @@ var key_dialogue_act_two: Dictionary = {
 		"question_4" : #[
 			"Interesting. We're recovering some sense of truth, no matter how twisted it is. " +
 			"I think that marks the end of today's session...",
-			#"I think that marks the end of today's session...[Select a treatment]"
+			#"I think that marks the end of today's session..."
 			#],
 		"response_4" : "Thanks Doc"
 	},
@@ -125,7 +125,7 @@ var key_dialogue_act_two: Dictionary = {
 		"I lost my parents while we were all asleep during the night. " +
 		"It’s a mistake to think the dead sleep at night; when an old bag of bones wants to walk, " +
 		"why not during the hours the mortals sleep?",
-		"question_3" : "Sarah, I’m going to suggest you take these...[Select a treatment]",
+		"question_3" : "Sarah, I’m going to suggest you take these...",
 		"response_3" : "What are they?",
 		"question_4" : #[
 			"Sleeping pills, they will help you rest.",
@@ -211,7 +211,7 @@ var key_dialogue_act_three: Dictionary = {
 			"The queen makes you bite the dust!",
 		"question_3" : "Is there something bothering?",
 		"response_3" : "It's not getting better. Everything we do makes it worse.",
-		"question_4" : "We’ll see how you’re feeling after...your treatment.]",
+		"question_4" : "We’ll see how you’re feeling after...your treatment.",
 		"response_4" : "I don't have high hopes.",
 	},
 }

@@ -17,7 +17,7 @@ var manager_count_bad: int = 8
 var key_patient_1: Dictionary = {
 		"name" : "Zbychu Nowak",
 		"age" : "28",
-		"blood_type" : 1,
+		"blood_type" : 0,
 		"health" : 1,
 		"medical_directive" : 3,
 		"bio" : "Unknown, an anomaly but tough. Found passed out in an alley, he was brought to us." +
@@ -65,7 +65,7 @@ func reset() -> void:
 
 func patient_treated(patient: String, option: int, directive: int, health: int, blood_type: int) -> void:
 	var _patient_data = current_patients[patient]
-	if directive in [5,6]:
+	if option in [5,6]:
 		current_patients[patient] = PatientBuilder.create_patient()
 		return
 	if health == 6:
@@ -99,7 +99,7 @@ func add_key_patient() -> void:
 	match day_count:
 		2:
 			current_patients["patient_" + str(GameStates.current_patients.size() + 1)] = key_patient_1
-		4:
+		3:
 			current_patients["patient_" + str(GameStates.current_patients.size() + 1)] = key_patient_2
-		6:
+		5:
 			current_patients["patient_" + str(GameStates.current_patients.size() + 1)] = key_patient_3

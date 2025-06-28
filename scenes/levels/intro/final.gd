@@ -1,10 +1,14 @@
 extends Node
 
-@onready var manager_label: Label = %ManagerLabel
 
+@onready var manager_label: Label = %ManagerLabel
+@onready var disagree_button: Button = $DisagreeButton
+@onready var agree_button: Button = $AgreeButton
 
 
 func _ready() -> void:
+	disagree_button.pressed.connect((_on_button_pressed.bind(false)))
+	disagree_button.pressed.connect((_on_button_pressed.bind(true)))
 	determine_cut_scene()
 
 func determine_cut_scene() -> void:
@@ -32,23 +36,25 @@ func _good_job() -> void:
 			ManageDialogue.play_pill_4_monika()
 		6:
 			ManageDialogue.play_pill_5_monika()
+			audio_time = 5.87
 		7:
 			ManageDialogue.play_agree_monika()
-			audio_time = 19.00
+			audio_time = 18.50
 		8:
 			ManageDialogue.play_disagree_monika()
-			audio_time = 24.00
+			audio_time = 23.41
 
 	manager_label.text = ManageDialogue.manager_text[GameStates.manager_count_good]
 
 	tween.tween_property(manager_label,"visible_ratio", 1.0, audio_time)
 	await tween.finished
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(4.0).timeout
+	agree_button.visible = true
+	disagree_button.visible = true
 
-	if GameStates.manager_count_ == 6:
-		determine_cut_scene()
-	else:
+	if GameStates.manager_count_good in [7,8]:
 		ScreenTransition.transition_to_scene("res://scenes/ui/main_menu/main_menu.tscn")
+
 
 func _bad_job() -> void:
 	var tween = create_tween()
@@ -71,5 +77,15 @@ func _bad_job() -> void:
 
 	tween.tween_property(manager_label,"visible_ratio", 1.0, audio_time)
 	await tween.finished
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(4.0).timeout
 	ScreenTransition.transition_to_scene("res://scenes/ui/main_menu/main_menu.tscn")
+
+
+func _on_button_pressed(button: bool) -> void:
+	agree_button.visible = false
+	disagree_button.visible = false
+	if button:
+		GameStates.manager_count_good += 1
+	else:
+		GameStates.manager_count_good += 2
+	_good_job()

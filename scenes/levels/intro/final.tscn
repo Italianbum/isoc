@@ -1,12 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://d02yx5wbuhnlk"]
+[gd_scene load_steps=7 format=3 uid="uid://d02yx5wbuhnlk"]
 
 [ext_resource type="Script" uid="uid://d14f3ni47wjtf" path="res://scenes/levels/intro/final.gd" id="1_rkmp6"]
+[ext_resource type="AudioStream" uid="uid://dpvck2h1s0rj6" path="res://assets/sfx/s_ambience 01.wav" id="2_c0ley"]
 [ext_resource type="Texture2D" uid="uid://c8g6i2y5wy4fc" path="res://assets/sprites/final.jpg" id="2_rkmp6"]
 [ext_resource type="Theme" uid="uid://bnee2nh36sxen" path="res://resources/default_theme.tres" id="3_0s6kk"]
 [ext_resource type="Texture2D" uid="uid://sqvulrnaud1w" path="res://assets/sprites/themanager.png" id="3_4b6xi"]
+[ext_resource type="PackedScene" uid="uid://c8rcuf5mwuojl" path="res://scenes/ui/button/button.tscn" id="6_snuh8"]
 
 [node name="Final" type="Node"]
 script = ExtResource("1_rkmp6")
+
+[node name="SAmbience01" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_c0ley")
+volume_db = -6.0
+autoplay = true
+bus = &"music"
 
 [node name="Bg" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -30,3 +38,19 @@ custom_minimum_size = Vector2(894, 232)
 layout_mode = 2
 theme = ExtResource("3_0s6kk")
 autowrap_mode = 3
+
+[node name="DisagreeButton" parent="." instance=ExtResource("6_snuh8")]
+visible = false
+offset_left = 416.0
+offset_top = 311.0
+offset_right = 629.0
+offset_bottom = 380.0
+text = "I think I'd like to leave..."
+
+[node name="AgreeButton" parent="." instance=ExtResource("6_snuh8")]
+visible = false
+offset_left = 125.0
+offset_top = 311.0
+offset_right = 338.0
+offset_bottom = 380.0
+text = "It's...Perfection"

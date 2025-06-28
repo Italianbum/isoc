@@ -24,21 +24,21 @@ var manager_text: Array[String] = [
 	Give it your best, good or bad, I'm just sure you'll find a place to hang in our organization. But lets try for good, I'd hate to chew you out on your first day.          \n
 	Stick to our medical directives and you'll be fiiine.",
 	#2
-	"Hey, awesome work, Doc. I've been talking to the boss. We might be throwing in an extra pudding cup for your lunch breaks. Just don't tell the others. Keep it up! I can just taste that you're going to do well here.",
+	"Hey, awesome work, Doc. I've been talking to the boss. We might be throwing in an extra pudding cup for your lunch breaks. Don't tell the others though. Keep it up! I can... taste that you're going to do well here.",
 	#3
-	"Showing promise and kindness, yummers, thanks for lunch! Wait... you have no idea what I'm talking about. But in due time, right? I just feel so ‘full' when reviewing your results.",
+	"Showing promise and kindness, yummers, thanks for lunch! Wait... you have no idea what I'm talking about. But in due time, right? I just feel so...full when reviewing your results.",
 	#4
-	"You've been a wonderful requirement to our success here. I hope you like the brand new officeI i can truly say I'm enjoying the view, haha. It may seem like we're moving fast. But we might be considering you for a permanent senior role here.",
+	"You've been a wonderful requirement to our success here. I hope you like the new office. I can say I'm...truly enjoying the view, haha. It may seem like we're moving fast. But we might be considering you for a permanent senior role.",
 	#5
 	"Amazing, I think it's time to meet the boss. I'll take you to him, and you'll get to see how much your work has helped us. ",
 	#6
 	"Isn't it magnificent? The quality of your work is just to DIE for. What do you think?",
 	#7
-	"I'm so happy to hear that from you. As for the boss, he's the third one on the left. So I guess in fact, you could say this place is under new management...by me and...now you...partner. Let me get some glasses and we'll have toast of the former owner. ",
+	"I'm so happy to hear that from you. As for the boss, he's the third one on the left. So I guess in fact, you could say this place is under new management...by me and...now you...partner. Lets get some glasses and we'll toast to the former owner.",
 	#8
 	"Oh, here I thought you really believed what we were doing here. Well I understand, let me take you to the boss and he'll hear out your grievances.Let me just ... string you up next to him. I guess you could say I'm one ‘pulling' the strings? Haha. Yummers, I knew I could taste the potential in you. ",
 	#9
-	"What a shame... we had high hopes for you on your first day, but I got a feeling you'll turn this around. I believe you in what you have to offer.",
+	"What a shame. We had high hopes for you on your first day, but I got a feeling you'll turn this around. I believe you and what...you have to offer.",
 	#10
 	"Second day no improvement. What are we paying you for? While you’re out, go ahead and write down 'Number One Manager,' ’cause I surely need the confidence boost....Keep to the directives.",
 	#11

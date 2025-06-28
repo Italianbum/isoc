@@ -149,15 +149,15 @@ func _load_patient_data(patient: int) -> void:
 	_set_patient_text()
 	_set_patient_image()
 	enable_treat_buttons()
-	if name_label.text == "Zbychu Nowak" && GameStates.day_count in [2,5,8]:
+	if name_label.text == "Zbychu Nowak" && GameStates.day_count in [2,4,7]:
 		_disable_treat_buttons()
 		play_scene.emit()
 		_set_special_text()
-	if name_label.text == "Nathan Dedrick" && GameStates.day_count in [4,6,8]:
+	if name_label.text == "Nathan Dedrick" && GameStates.day_count in [3,5,7]:
 		_disable_treat_buttons()
 		play_scene.emit()
 		_set_special_text()
-	if name_label.text == "Sarah Queen" && GameStates.day_count in [6,8]:
+	if name_label.text == "Sarah Queen" && GameStates.day_count in [5,7]:
 		_disable_treat_buttons()
 		play_scene.emit()
 		_set_special_text()
@@ -297,6 +297,7 @@ func _check_end_day() -> void:
 
 
 func _on_treat_button_pressed(option: int) -> void:
+	_disable_treat_buttons()
 	match option:
 		0,1,2,3:
 			if option == current_directive:
