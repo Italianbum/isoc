@@ -8,6 +8,8 @@ const CREDITS: PackedScene = preload("res://scenes/ui/credits/credits.tscn")
 @onready var sfx_slider: HSlider = %SfxSlider
 @onready var music_slider: HSlider = %MusicSlider
 @onready var sound_panel: PanelContainer = $SoundPanel
+@onready var dialogue: HSlider = %Dialogue
+@onready var master_slider: HSlider = %MasterSlider
 
 
 func _ready() -> void:
@@ -18,8 +20,12 @@ func _ready() -> void:
 	if GameStates.first_run:
 		sfx_slider.value_changed.connect(_on_audio_slider_changed.bind("sfx"))
 		music_slider.value_changed.connect(_on_audio_slider_changed.bind("music"))
+		dialogue.value_changed.connect(_on_audio_slider_changed.bind("dialogue"))
+		master_slider.value_changed.connect(_on_audio_slider_changed.bind("Master"))
 		sfx_slider.value = _get_bus_volume_percent("sfx")
 		music_slider.value = _get_bus_volume_percent("music")
+		dialogue.value = _get_bus_volume_percent("dialogue")
+		master_slider.value = _get_bus_volume_percent("Master")
 		sound_panel.visible = true
 	GameStates.reset()
 	GameStates.first_run = true

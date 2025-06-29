@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=19 format=3 uid="uid://bnee2nh36sxen"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://bnee2nh36sxen"]
 
 [ext_resource type="Texture2D" uid="uid://x501vi7fny75" path="res://assets/sprites/button_1.png" id="1_w7mbl"]
 [ext_resource type="Texture2D" uid="uid://dr7garwkjvbbx" path="res://assets/sprites/button_2.png" id="2_w72j2"]
@@ -39,6 +39,12 @@ texture = ExtResource("5_bsk3a")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_olea1"]
 texture = ExtResource("6_rivam")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w72j2"]
+bg_color = Color(0.619608, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdiyg"]
+bg_color = Color(0.619608, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7mbl"]
 bg_color = Color(0.153778, 0, 0, 1)
 
@@ -57,4 +63,6 @@ Button/styles/normal = SubResource("StyleBoxTexture_pwtmr")
 Button/styles/normal_mirrored = SubResource("StyleBoxTexture_khqjh")
 Button/styles/pressed = SubResource("StyleBoxTexture_1d3ix")
 Button/styles/pressed_mirrored = SubResource("StyleBoxTexture_olea1")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_w72j2")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_wdiyg")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_w7mbl")

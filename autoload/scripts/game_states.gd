@@ -20,8 +20,8 @@ var key_patient_1: Dictionary = {
 		"blood_type" : 0,
 		"health" : 1,
 		"medical_directive" : 3,
-		"bio" : "Unknown, an anomaly but tough. Found passed out in an alley, he was brought to us." +
-			"Very hard to communicate with. The scars around his hands tell us this is no easy patient." +
+		"bio" : "Unknown, an anomaly but tough. Found passed out in an alley, he was brought to us. " +
+			"Very hard to communicate with. The scars around his hands tell us this is no easy patient. " +
 			"With the amount of fight he has caused throughout his time here, he might be better off in a more equipped facility."
 	}
 

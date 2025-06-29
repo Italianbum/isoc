@@ -1,5 +1,6 @@
 extends Node
 
+const PAUSE_MENU: PackedScene = preload("res://scenes/ui/pause_menu/pause_menu.tscn")
 
 @onready var manager_label: Label = %ManagerLabel
 @onready var disagree_button: Button = $DisagreeButton
@@ -10,6 +11,14 @@ func _ready() -> void:
 	disagree_button.pressed.connect((_on_button_pressed.bind(false)))
 	disagree_button.pressed.connect((_on_button_pressed.bind(true)))
 	determine_cut_scene()
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		add_child(PAUSE_MENU.instantiate())
+		get_tree().root.set_input_as_handled()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 
 func determine_cut_scene() -> void:
 	if GameStates.day:

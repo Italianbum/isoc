@@ -54,12 +54,12 @@ var key_dialogue_act_one: Dictionary = {
 		"response_4" : "mhm"
 	},
 	"Nathan Dedrick" : {
-		"question_1" : "Have you had time to go outside? I've been hearing you're indoors all day, locked up in your room.",
-		"response_1" : "Did you know one time we had a guy with red eyes who would only come in at night?" +
+		"question_1" : "Have you had time to go outside? I've been hearing you're indoors all day, locked up in your room. ",
+		"response_1" : "Did you know one time we had a guy with red eyes who would only come in at night? " +
 			"He was the boss. I was the chief manager, so I had it good never having to meet him at night.",
 		"question_2" : "Did you know going outside, stretching your legs, and walking around the yard is good for your mental health?",
-		"response_2" : "Well, I happen to be handed a super secret project." +
-			"We tend to grow a wide supply of things out here, and I'm in charge of obtaining us some land." +
+		"response_2" : "Well, I happen to be handed a super secret project. " +
+			"We tend to grow a wide supply of things out here, and I'm in charge of obtaining us some land. " +
 			"Boss man really trusts me.",
 		"question_3" : "What about a lunch break outside?",
 		"response_3" : "No, I can't leave until the work is done.",

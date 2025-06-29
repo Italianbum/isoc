@@ -32,7 +32,7 @@ func _build_patient_list() -> void:
 	if GameStates.day_count == 4:
 		GameStates.current_act = ChatOptions.key_dialogue_act_two
 
-	if GameStates.day_count == 7:
+	if GameStates.day_count == 6:
 		GameStates.current_act = ChatOptions.key_dialogue_act_three
 
 	if GameStates.first_run:

@@ -149,7 +149,7 @@ func _load_patient_data(patient: int) -> void:
 	_set_patient_text()
 	_set_patient_image()
 	enable_treat_buttons()
-	if name_label.text == "Zbychu Nowak" && GameStates.day_count in [2,4,7]:
+	if name_label.text == "Zbychu Nowak" && GameStates.day_count in [2,4,6]:
 		_disable_treat_buttons()
 		play_scene.emit()
 		_set_special_text()

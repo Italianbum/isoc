@@ -52,6 +52,26 @@ layout_mode = 2
 theme = ExtResource("2_kyv63")
 theme_override_constants/separation = 16
 
+[node name="MasterOptionsContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_kyv63")
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/MasterOptionsContainer"]
+layout_mode = 2
+theme = ExtResource("2_kyv63")
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/MasterOptionsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_kyv63")
+max_value = 3.0
+step = 0.01
+
 [node name="SfxOptionsContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_kyv63")
@@ -90,6 +110,25 @@ theme = ExtResource("2_kyv63")
 max_value = 3.0
 step = 0.01
 
+[node name="DialogueOptionsContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_kyv63")
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/DialogueOptionsContainer"]
+layout_mode = 2
+theme = ExtResource("2_kyv63")
+theme_override_font_sizes/font_size = 25
+text = "Dialogue Volume"
+horizontal_alignment = 1
+
+[node name="DialogueSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/DialogueOptionsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_kyv63")
+max_value = 3.0
+step = 0.01
+
 [node name="WindowOptionsContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_kyv63")
@@ -97,6 +136,7 @@ theme_override_constants/separation = 16
 
 [node name="WindowButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/WindowOptionsContainer" instance=ExtResource("2_jfrbr")]
 unique_name_in_owner = true
+layout_direction = 3
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -107,6 +147,7 @@ Fullscreen"
 [node name="ControlsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2" instance=ExtResource("2_jfrbr")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(84, 23)
+layout_direction = 3
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -115,6 +156,7 @@ text = "Controls"
 
 [node name="BackButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2" instance=ExtResource("2_jfrbr")]
 unique_name_in_owner = true
+layout_direction = 3
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 10
