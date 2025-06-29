@@ -31,8 +31,8 @@ var key_patient_2: Dictionary = {
 		"blood_type" : 3,
 		"health" : 0,
 		"medical_directive" : 3,
-		"bio" : "Admitted here after countless hours of overtime and meeting all the deadlines." +
-			"One day, he just snapped. Now he runs around telling us he's the chief manager of the drones," +
+		"bio" : "Admitted here after countless hours of overtime and meeting all the deadlines. " +
+			"One day, he just snapped. Now he runs around telling us he's the chief manager of the drones, " +
 			"whatever that means. A real case we have before us."
 	}
 

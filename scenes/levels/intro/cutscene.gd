@@ -82,7 +82,7 @@ func _bad_job() -> void:
 	tween.tween_property(manager_label,"visible_ratio", 1.0, audio_time)
 	await tween.finished
 	await get_tree().create_timer(2.0).timeout
-	if GameStates.manager_count_bad == 12:
+	if GameStates.manager_count_bad == 11:
 		ScreenTransition.transition_to_scene("uid://d02yx5wbuhnlk")
 	else:
 		ScreenTransition.transition_to_scene("uid://c7y7kh8k4adgv")

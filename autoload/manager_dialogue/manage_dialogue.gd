@@ -18,9 +18,9 @@ var manager_text: Array[String] = [
 	"Think for a second not about the pain you caused, but about how good some sunshine would feel right now.
 	Well, here on our island.          \n
 	You'll get the care you need and sunlight to bathe in. Our experienced staff is overflowing with dedication to help YOU get better.   \n
-	There's no such thing as a bad batch, just someone who needs a little time to bake and marinate in their thoughts. Isolated in a chamber of your own ideals, you'll come out with a clear mind.",
+	There's no such thing as a bad batch, just someone who needs a little time to bake and marinate in their thoughts. Isolated in a chamber of your own ideas, you'll come out with a clear mind.",
 	#1
-	"Hey there, Welcome...to the team. The big man up top is excited to see what you bring to the table. Sorry he can't be here to greet you on your first day. He's...tied up at the moment. Anyways....uh          \n
+	"Hey there, Welcome...to the team. The big man up top is excited to see what you bring to the table. Sorry he can't be here to greet you on your first day. He's...tied up at the moment. Anyways....uh        \n
 	Give it your best, good or bad, I'm just sure you'll find a place to hang in our organization. But lets try for good, I'd hate to chew you out on your first day.          \n
 	Stick to our medical directives and you'll be fiiine.",
 	#2
@@ -39,13 +39,14 @@ var manager_text: Array[String] = [
 	"Oh, here I thought you really believed what we were doing here. Well I understand, let me take you to the boss and he'll hear out your grievances. Let me just...          \n
 	String you up next to him. I guess you could say I'm one ‘pulling' the strings? Haha. Yummers, I knew I could taste the potential in you.",
 	#9
-	"What a shame. We had high hopes for you on your first day, but I got a feeling you'll turn this around. I believe you and what...you have to offer.",
+	"What a shame. We had high hopes for you on your first day, but I got a feeling you'll turn this around. I believe you... and what you have to offer.",
 	#10
 	"Second day no improvement. What are we paying you for? While you’re out, go ahead and write down 'Number One Manager,' ’cause I surely need the confidence boost....Keep to the directives.",
 	#11
-	"Tada! Today's gonna be the day you make it off this island cause we are going to terminate you! The boss would like to interview you for our records. Come with me.",
+	"Tada! Today's day you make it off this island cause we are going to terminate you! The boss would like to interview you for our records.",
 	#12
-	"Isn't it magnificent? Can we get a you’re no longer in Kansas? Unfortunately, there won't be any slippers in this story. As for the boss, you’re looking at her. But I'll go ahead and string you up next to my predecessor. It’s just like I told you on your first day, good or bad, I'm just sure you'll find a place here.",
+	"Isn't it magnificent? Can we get a you’re no longer in Kansas?           \n
+	Unfortunately, there won't be any slippers in this story. As for the boss, you’re looking at her. But I'll go ahead and string you up next to my predecessor. It’s just like I told you on your first day, good or bad, I'm just sure you'll find a place here.",
 	]
 
 func play_ad_monika() -> void:
