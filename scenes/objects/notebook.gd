@@ -366,6 +366,7 @@ func _on_button_pressed(button: bool) -> void:
 func _on_complete_button_pressed() -> void:
 	var _frame: int
 
+	right_button.disabled = true
 	left_button.disabled = true
 	complete_button.visible = false
 	page_0.visible = false

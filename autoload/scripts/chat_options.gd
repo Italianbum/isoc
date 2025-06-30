@@ -149,9 +149,9 @@ var key_dialogue_act_three: Dictionary = {
 		"response_1" : "No.",
 		"question_2" : "Wait.. you understand me?",
 		"response_2" : "Ya.",
-		"question_3" : "How limited are your words? And how much can you understand?",
+		"question_3" : "How limited are your words? How much can you understand?",
 		"response_3" : "Mhm...ya",
-		"question_4" : "Okay...well, I recommend you go see the medical director...or you let them out",
+		"question_4" : "Okay...well, I recommend you go see the medical director...or you let them out.",
 		"response_4" : "Ya..."
 	},
 	"Nathan Dedrick" : {

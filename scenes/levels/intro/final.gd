@@ -9,7 +9,7 @@ const PAUSE_MENU: PackedScene = preload("res://scenes/ui/pause_menu/pause_menu.t
 
 func _ready() -> void:
 	disagree_button.pressed.connect((_on_button_pressed.bind(false)))
-	disagree_button.pressed.connect((_on_button_pressed.bind(true)))
+	agree_button.pressed.connect((_on_button_pressed.bind(true)))
 	determine_cut_scene()
 
 
