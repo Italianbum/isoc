@@ -48,7 +48,7 @@ func _good_job() -> void:
 			audio_time = 5.87
 		7:
 			ManageDialogue.play_agree_monika()
-			audio_time = 18.50
+			audio_time = 18.00
 		8:
 			ManageDialogue.play_disagree_monika()
 			audio_time = 23.41

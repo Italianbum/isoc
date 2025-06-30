@@ -162,6 +162,9 @@ func _load_patient_data(patient: int) -> void:
 		play_scene.emit()
 		_set_special_text()
 
+	if name_label.text in ["Zbychu Nowak","Nathan Dedrick","Sarah Queen"] && current_health == 6:
+		play_scene.emit()
+
 func _set_special_text() -> void:
 	chat_button_1.text = GameStates.current_act[name_label.text]["question_1"]
 	chat_button_2.text = GameStates.current_act[name_label.text]["question_2"]

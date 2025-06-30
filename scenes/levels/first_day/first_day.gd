@@ -45,9 +45,11 @@ func _build_patient_list() -> void:
 	else:
 		if GameStates.day_count in [2,3,5]:
 			GameStates.add_key_patient()
-		else:
-			GameStates.current_patients["patient_" + str(GameStates.current_patients.size() + 1)] =  PatientBuilder.create_patient()
 			GameStates.patient_count += 1
+		else:
+			if GameStates.patient_count < 6:
+				GameStates.current_patients["patient_" + str(GameStates.current_patients.size() + 1)] =  PatientBuilder.create_patient()
+				GameStates.patient_count += 1
 	notebook.set_cases()
 
 
@@ -65,7 +67,10 @@ func _set_patient_image() -> void:
 		"Nathan Dedrick":
 			patient_image.animation = &"p3"
 
-	tween.tween_property(patient_image,"modulate", Color(1.0,1.0,1.0,1.0), 3.0)
+	if notebook.current_health == 6:
+		tween.tween_property(patient_image,"modulate", Color(0.0,0.0,0.0,0.5), 3.0)
+	else:
+		tween.tween_property(patient_image,"modulate", Color(1.0,1.0,1.0,1.0), 3.0)
 
 
 
