@@ -236,7 +236,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"page_0",
-"speed": 11.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -573,7 +573,7 @@ bus = &"sfx"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wt2df")
-animation = &"page_4"
+animation = &"page_0"
 
 [node name="Page0" type="MarginContainer" parent="."]
 unique_name_in_owner = true
