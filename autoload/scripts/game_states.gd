@@ -2,7 +2,7 @@ extends Node
 
 const health_statuses: Array = ["Undetermined", "Good", "Fair", "Poor", "Serious", "Critical", "Deceased"]
 const blood_types: Array = ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"]
-const medical_directives: Array = ["Prescribe Pill A","Prescribe Pill B","Prescribe Pill C","Prescribe Pill D","Prescribe Placebo","Admit to Hospice", "Discharge"]
+const medical_directives: Array = ["Prescribe Pill","Prescribe Pill","Prescribe Pill","Prescribe Pill","Prescribe Placebo","Admit to Hospice", "Discharge"]
 
 var first_run = true
 var current_patients: Dictionary
@@ -61,6 +61,38 @@ func reset() -> void:
 	current_act = ChatOptions.key_dialogue_act_one
 	manager_count_good = 1
 	manager_count_bad = 8
+	key_patient_1 = {
+		"name" : "Zbychu Nowak",
+		"age" : "28",
+		"blood_type" : 0,
+		"health" : 1,
+		"medical_directive" : 3,
+		"bio" : "Unknown, an anomaly but tough. Found passed out in an alley, he was brought to us. " +
+			"Very hard to communicate with. The scars around his hands tell us this is no easy patient. " +
+			"With the amount of fight he has caused throughout his time here, he might be better off in a more equipped facility."}
+	key_patient_2 = {
+			"name" : "Nathan Dedrick",
+			"age" : "37",
+			"blood_type" : 1,
+			"health" : 0,
+			"medical_directive" : 3,
+			"bio" : "Admitted here after countless hours of overtime and meeting all the deadlines. " +
+				"One day, he just snapped. Now he runs around telling us he's the chief manager of the drones, " +
+				"whatever that means. A real case we have before us."
+		}
+	key_patient_3 = {
+			"name" : "Sarah Queen",
+			"age" : "32",
+			"blood_type" : 3,
+			"health" : 0,
+			"medical_directive" : 3,
+			"bio" : "A fallen Rockstar, that's what we call her around here. " +
+			"Before being admitted to us, she toured all around the world. " +
+			"But one day, these guys showed up with the right paperwork, and we had to admit her. " +
+			"Even when I make my trips to the small fishing village on the weekends, " +
+			"I still see glimpses of the star power she once wielded. The locals still blast her songs. " +
+			"What an idol we have here."
+		}
 
 
 func patient_treated(patient: String, option: int, directive: int, health: int, blood_type: int) -> void:
@@ -71,7 +103,7 @@ func patient_treated(patient: String, option: int, directive: int, health: int, 
 	if health == 6:
 		return
 	if option in [0,1,2,3]:
-		_patient_data["health"] += 1
+		_patient_data["health"] = clampi(_patient_data["health"] + 1,1,6)
 		if option == 2:
 			randi_range(blood_type,7)
 		elif option == directive:
@@ -89,7 +121,7 @@ func patient_treated(patient: String, option: int, directive: int, health: int, 
 				6:
 					_patient_data["blood_type"] = 7
 	if option == 4:
-		_patient_data["health"] -= 1
+		_patient_data["health"] = clampi(_patient_data["health"] - 1,1,6)
 
 	_patient_data["age"] = str(1 + int(_patient_data["age"]))
 	current_patients[patient] = _patient_data

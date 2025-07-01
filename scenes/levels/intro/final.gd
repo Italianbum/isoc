@@ -48,10 +48,10 @@ func _good_job() -> void:
 			audio_time = 5.87
 		7:
 			ManageDialogue.play_agree_monika()
-			audio_time = 18.00
+			audio_time = 18.50
 		8:
 			ManageDialogue.play_disagree_monika()
-			audio_time = 23.41
+			audio_time = 23.81
 
 	manager_label.text = ManageDialogue.manager_text[GameStates.manager_count_good]
 
@@ -60,7 +60,7 @@ func _good_job() -> void:
 	await get_tree().create_timer(2.0).timeout
 
 	if GameStates.manager_count_good in [7,8]:
-		await get_tree().create_timer(4.0).timeout
+		await get_tree().create_timer(3.0).timeout
 		ScreenTransition.transition_to_scene("res://scenes/ui/main_menu/main_menu.tscn")
 	else:
 		agree_button.visible = true
@@ -88,7 +88,7 @@ func _bad_job() -> void:
 
 	tween.tween_property(manager_label,"visible_ratio", 1.0, audio_time)
 	await tween.finished
-	await get_tree().create_timer(6.0).timeout
+	await get_tree().create_timer(4.0).timeout
 	ScreenTransition.transition_to_scene("res://scenes/ui/main_menu/main_menu.tscn")
 
 

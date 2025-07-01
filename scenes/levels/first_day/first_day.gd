@@ -68,7 +68,7 @@ func _set_patient_image() -> void:
 			patient_image.animation = &"p3"
 
 	if notebook.current_health == 6:
-		tween.tween_property(patient_image,"modulate", Color(0.0,0.0,0.0,0.5), 3.0)
+		tween.tween_property(patient_image,"modulate", Color(0.0,0.0,0.0,0.6), 4.0)
 	else:
 		tween.tween_property(patient_image,"modulate", Color(1.0,1.0,1.0,1.0), 3.0)
 

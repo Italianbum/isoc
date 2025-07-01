@@ -24,22 +24,24 @@ var manager_text: Array[String] = [
 	Uh. Give it your best, good or bad, I'm just sure you'll find a place to hang in our organization. But lets try for good, I'd hate to chew you out on your first day.       \n
 	Stick to our medical directives and you'll be fiiine.",
 	#2
-	"Hey. Awesome work, Doc. I've been talking to the boss. We might be throwing in an extra pudding cup for your lunch breaks. Don't tell the others though. Keep it up! I can... taste that you're going to do well here.",
+	"Hey. Awesome work, Doc. I've been talking to the boss. We might be throwing in an extra pudding cup for your lunch breaks. Don't tell the others though. Keep it up! I can...taste that you're going to do well here.",
 	#3
-	"Showing kindness and promise, yummers, thanks for lunch! Wait... you have no idea what I'm talking about. In due time, right? I just feel so... full when reviewing your results.",
+	"Showing kindness and promise, yummers, thanks for lunch! Wait... you have no idea what I'm talking about. In due time, right? I just feel so...full when reviewing your results.",
 	#4
-	"You've been a wonderful requirement to our success here. I hope you like the brand new office. I can say... I'm... truly enjoying the view, haha. It may seem like we're moving fast. Buut we might be considering you for a permanent senior role.",
+	"You've been a wonderful requirement to our success here. I hope you like the brand new office. I can say... I'm...truly enjoying the view, haha. It may seem like we're moving fast. Buut we might be considering you for a permanent senior role.",
 	#5
 	"Amazing, It's time to see the boss. I'll take you to him, and you'll get to see how much your work has helped us.",
 	#6
 	"Isn't it magnificent? The quality of your work is to DIIEEE for. What do you think?",
 	#7
-	"I'm so happy to hear that from you. As for the boss, he's the third one on the left. Sooo I guess in fact, you could say this place is under.....new management by me...          \n
-	and now you...partner. Lets... get some glasses and we'll toast to the former owner.",
+	"I'm so happy to hear that from you. As for the boss, he's the third one on the left. Sooo I guess in fact, you could say this place is under... new management by me...                          \n
+	And now you...partner.         \n
+	Lets... get some glasses and... we'll toast to the former owner.",
 	#8
-	"Oh... here I thought you really believed what we were doing here. Well... I understand... Let me take you to the boss and... he'll hear out your... grievances. Let me...          \n
+	"Oh... here I thought you really believed what we were doing here. Well... I understand... Let me... take you to the boss and... he'll hear out your... grievances...           \n
+	Let me...                    \n
 	String you up next to him. I guess you could say...          \n
-	I'm the one ‘pulling' the strings. Haha. Yummers. I knew I could taste the potential in you.",
+	I'm the one pulling the strings. Haha... Yummers. I knew I could taste the potential in you.",
 	#9
 	"What a shame. We had high hopes for you on your first day but... I got a feeling you'll turn this around. I believe you... in what YOU have to offer.",
 	#10
@@ -47,8 +49,9 @@ var manager_text: Array[String] = [
 	#11
 	"Tadaa! Today's the day you make it off this island cause we are going to terminate you! The boss would like to interview you for our records.",
 	#12
-	"Isn't it magnificent? Can we get aaa...... You're no longer in Kansas?               \n
-	Unfortunately, there won't be any slippers in this story. As for the boss, you’re looking at her. But I'll go ahead and string you up next to my predecessor. It’s just like I told you on your first day, good or bad.         \n
+	"Isn't it magnificent?           \n
+	Can we get aaa...... You're no longer in Kansas?               \n
+	Unfortunately, there won't be any slippers in this story. As for the boss, you’re looking at her. I'll go ahead and string you up next to my predecessor. It’s just like I told you on your first day, good or bad.         \n
 	I'm sure you'll find a place here.",
 	]
 

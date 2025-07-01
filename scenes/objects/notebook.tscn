@@ -274,7 +274,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"page_1",
-"speed": 11.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -312,7 +312,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"page_2",
-"speed": 11.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -350,7 +350,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"page_3",
-"speed": 11.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -498,7 +498,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"return_to_0",
-"speed": 40.0
+"speed": 44.0
 }]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gko4n"]
@@ -573,7 +573,7 @@ bus = &"sfx"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wt2df")
-animation = &"page_0"
+animation = &"page_4"
 
 [node name="Page0" type="MarginContainer" parent="."]
 unique_name_in_owner = true

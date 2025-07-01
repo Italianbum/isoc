@@ -328,9 +328,12 @@ func _on_treat_button_pressed(option: int) -> void:
 
 
 func _on_case_button_pressed(case: int) -> void:
+	if name_label.text in ["Sarah Queen","Zbychu Nowak","Nathan Dedrick"]:
+		owner.fade_patient_image()
 	current_case = case
 	_load_patient_data(case)
 	_on_button_pressed(true)
+
 
 
 func _on_button_pressed(button: bool) -> void:
