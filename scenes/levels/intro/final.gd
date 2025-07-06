@@ -8,6 +8,7 @@ const PAUSE_MENU: PackedScene = preload("res://scenes/ui/pause_menu/pause_menu.t
 
 
 func _ready() -> void:
+	await get_tree().create_timer(1.0).timeout
 	disagree_button.pressed.connect((_on_button_pressed.bind(false)))
 	agree_button.pressed.connect((_on_button_pressed.bind(true)))
 	determine_cut_scene()

@@ -39,8 +39,8 @@ var key_patient_2: Dictionary = {
 var key_patient_3: Dictionary = {
 		"name" : "Sarah Queen",
 		"age" : "32",
-		"blood_type" : 3,
-		"health" : 0,
+		"blood_type" : 2,
+		"health" : 1,
 		"medical_directive" : 3,
 		"bio" : "A fallen Rockstar, that's what we call her around here. " +
 		"Before being admitted to us, she toured all around the world. " +
