@@ -12,6 +12,8 @@ var is_control_menu_open: bool = false
 @onready var music_slider: HSlider = %MusicSlider
 @onready var back_button: Button = $%BackButton
 @onready var controls: Button = %ControlsButton
+@onready var dialogue_slider: HSlider = %DialogueSlider
+@onready var master_slider: HSlider = %MasterSlider
 
 
 func _ready() -> void:
@@ -19,6 +21,8 @@ func _ready() -> void:
 	back_button.pressed.connect(_on_back_button_pressed)
 	sfx_slider.value_changed.connect(_on_audio_slider_changed.bind("sfx"))
 	music_slider.value_changed.connect(_on_audio_slider_changed.bind("music"))
+	dialogue_slider.value_changed.connect(_on_audio_slider_changed.bind("dialogue"))
+	master_slider.value_changed.connect(_on_audio_slider_changed.bind("Master"))
 	controls.pressed.connect(_on_controls_pressed)
 	_update_display()
 
@@ -26,6 +30,8 @@ func _ready() -> void:
 func _update_display() -> void:
 	sfx_slider.value = _get_bus_volume_percent("sfx")
 	music_slider.value = _get_bus_volume_percent("music")
+	dialogue_slider.value = _get_bus_volume_percent("dialogue")
+	master_slider.value = _get_bus_volume_percent("Master")
 
 
 func _get_bus_volume_percent(bus_name: String) -> float:

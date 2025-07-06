@@ -149,18 +149,21 @@ func _load_patient_data(patient: int) -> void:
 	_set_patient_text()
 	_set_patient_image()
 	enable_treat_buttons()
-	if name_label.text == "Zbychu Nowak" && GameStates.day_count in [2,5,8]:
+	if name_label.text == "Zbychu Nowak" && GameStates.day_count in [2,4,6]:
 		_disable_treat_buttons()
 		play_scene.emit()
 		_set_special_text()
-	if name_label.text == "Nathan Dedrick" && GameStates.day_count in [4,6,8]:
+	if name_label.text == "Nathan Dedrick" && GameStates.day_count in [3,5,7]:
 		_disable_treat_buttons()
 		play_scene.emit()
 		_set_special_text()
-	if name_label.text == "Sarah Queen" && GameStates.day_count in [6,8]:
+	if name_label.text == "Sarah Queen" && GameStates.day_count in [5,7]:
 		_disable_treat_buttons()
 		play_scene.emit()
 		_set_special_text()
+
+	if name_label.text in ["Zbychu Nowak","Nathan Dedrick","Sarah Queen"] && current_health == 6:
+		play_scene.emit()
 
 func _set_special_text() -> void:
 	chat_button_1.text = GameStates.current_act[name_label.text]["question_1"]
@@ -297,6 +300,7 @@ func _check_end_day() -> void:
 
 
 func _on_treat_button_pressed(option: int) -> void:
+	_disable_treat_buttons()
 	match option:
 		0,1,2,3:
 			if option == current_directive:
@@ -319,12 +323,17 @@ func _on_treat_button_pressed(option: int) -> void:
 	treatment = true
 	complete_button.visible = true
 	GameStates.patient_treated(current_patient,option, current_directive, current_health, current_blood_type)
+	if name_label.text in ["Sarah Queen","Zbychu Nowak","Nathan Dedrick"]:
+		owner.fade_patient_image()
 
 
 func _on_case_button_pressed(case: int) -> void:
+	if name_label.text in ["Sarah Queen","Zbychu Nowak","Nathan Dedrick"]:
+		owner.fade_patient_image()
 	current_case = case
 	_load_patient_data(case)
 	_on_button_pressed(true)
+
 
 
 func _on_button_pressed(button: bool) -> void:
@@ -363,6 +372,7 @@ func _on_button_pressed(button: bool) -> void:
 func _on_complete_button_pressed() -> void:
 	var _frame: int
 
+	right_button.disabled = true
 	left_button.disabled = true
 	complete_button.visible = false
 	page_0.visible = false

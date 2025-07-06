@@ -1,11 +1,19 @@
 extends Node
 
+const PAUSE_MENU: PackedScene = preload("res://scenes/ui/pause_menu/pause_menu.tscn")
 
 @onready var manager_label: Label = %ManagerLabel
 
 
 func _ready() -> void:
 	_start_ad()
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		add_child(PAUSE_MENU.instantiate())
+		get_tree().root.set_input_as_handled()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _start_ad() -> void:

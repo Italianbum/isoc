@@ -29,25 +29,27 @@ func _input(event: InputEvent) -> void:
 
 func _build_patient_list() -> void:
 	GameStates.day_count += 1
+	if GameStates.day_count == 4:
+		GameStates.current_act = ChatOptions.key_dialogue_act_two
+
+	if GameStates.day_count == 6:
+		GameStates.current_act = ChatOptions.key_dialogue_act_three
+
 	if GameStates.first_run:
 		GameStates.current_act = ChatOptions.key_dialogue_act_one
 		GameStates.current_patients = {
 			"patient_" + str(GameStates.current_patients.size() + 1) : PatientBuilder.create_patient(),
-			"patient_" + str(GameStates.current_patients.size() + 2): PatientBuilder.create_patient(),
-			"patient_" + str(GameStates.current_patients.size() + 3): PatientBuilder.create_patient()
 		}
 		GameStates.first_run = false
-		GameStates.patient_count = 3
+		GameStates.patient_count = 1
 	else:
-		if GameStates.day_count in [2,4,6]:
+		if GameStates.day_count in [2,3,5]:
 			GameStates.add_key_patient()
-			if GameStates.day_count == 6:
-				GameStates.current_act = ChatOptions.key_dialogue_act_two
-		elif GameStates.patient_count > 7:
-			GameStates.current_act = ChatOptions.key_dialogue_act_three
-		else:
-			GameStates.current_patients["patient_" + str(GameStates.current_patients.size() + 1)] =  PatientBuilder.create_patient()
 			GameStates.patient_count += 1
+		else:
+			if GameStates.patient_count < 6:
+				GameStates.current_patients["patient_" + str(GameStates.current_patients.size() + 1)] =  PatientBuilder.create_patient()
+				GameStates.patient_count += 1
 	notebook.set_cases()
 
 
@@ -65,11 +67,16 @@ func _set_patient_image() -> void:
 		"Nathan Dedrick":
 			patient_image.animation = &"p3"
 
-	tween.tween_property(patient_image,"modulate", Color(1.0,1.0,1.0,1.0), 3.0)
+	if notebook.current_health == 6:
+		tween.tween_property(patient_image,"modulate", Color(0.0,0.0,0.0,0.6), 4.0)
+	else:
+		tween.tween_property(patient_image,"modulate", Color(1.0,1.0,1.0,1.0), 3.0)
 
 
 
-func _fade_patient_image() -> void:
+func fade_patient_image() -> void:
+	if patient_image.modulate == Color(0.0,0.0,0.0,0.0):
+		return
 	var tween = create_tween()
 	tween.tween_property(patient_image,"modulate", Color(0.0,0.0,0.0,0.0), 3.0)
 
@@ -89,6 +96,10 @@ func _on_end_day() -> void:
 		GameStates.day = true
 	else:
 		GameStates.day = false
-	if GameStates.day_count in [2,4,6,8] or GameStates.day_count > 8:
+	if GameStates.day_count == 1:
+		ScreenTransition.transition_to_scene("uid://c7y7kh8k4adgv")
+		return
+	if GameStates.day_count in [2,4,6,7] or GameStates.day_count > 7 or !GameStates.day:
 		ScreenTransition.transition_to_scene("uid://cc335cp3b3clc")
-	ScreenTransition.transition_to_scene("uid://c7y7kh8k4adgv")
+	else:
+		ScreenTransition.transition_to_scene("uid://c7y7kh8k4adgv")

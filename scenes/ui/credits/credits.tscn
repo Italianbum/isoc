@@ -44,3 +44,17 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 10
 text = "Back"
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "Italianbum - Programmer/Developer
+
+Key - Sound Effects, Game Design, Writing
+
+Monika - Voice Actor
+
+Keeksa - 2D artist
+
+Loardeli - 2D art assist
+"
+horizontal_alignment = 1

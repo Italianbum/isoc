@@ -236,7 +236,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"page_0",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -274,7 +274,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"page_1",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -312,7 +312,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"page_2",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -350,13 +350,13 @@ animations = [{
 }],
 "loop": false,
 "name": &"page_3",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_24y5q")
 }],
-"loop": true,
+"loop": false,
 "name": &"page_4",
 "speed": 5.0
 }, {
@@ -498,7 +498,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"return_to_0",
-"speed": 40.0
+"speed": 44.0
 }]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gko4n"]
@@ -573,7 +573,7 @@ bus = &"sfx"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wt2df")
-animation = &"return_to_0"
+animation = &"page_0"
 
 [node name="Page0" type="MarginContainer" parent="."]
 unique_name_in_owner = true
@@ -807,7 +807,7 @@ layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 disabled = true
 text = "How are you feeling?"
 autowrap_mode = 3
@@ -818,7 +818,7 @@ layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 disabled = true
 text = "Does anything hurt?"
 autowrap_mode = 3
@@ -829,7 +829,7 @@ layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 disabled = true
 text = "How can I help?"
 autowrap_mode = 3
@@ -840,7 +840,7 @@ layout_direction = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.153778, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 disabled = true
 text = "Have you taken your medications?"
 autowrap_mode = 3
@@ -865,7 +865,7 @@ custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 7
 text = "yes"
 autowrap_mode = 3
 
@@ -875,7 +875,7 @@ custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 7
 text = "yes"
 autowrap_mode = 3
 
@@ -885,7 +885,7 @@ custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 7
 text = "yes"
 autowrap_mode = 3
 
@@ -895,7 +895,7 @@ custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 7
 text = "yes"
 autowrap_mode = 3
 
