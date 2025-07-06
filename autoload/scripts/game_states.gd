@@ -2,7 +2,7 @@ extends Node
 
 const health_statuses: Array = ["Undetermined", "Good", "Fair", "Poor", "Serious", "Critical", "Deceased"]
 const blood_types: Array = ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"]
-const medical_directives: Array = ["Prescribe Pill A","Prescribe Pill B","Prescribe Pill C","Prescribe Pill D","Prescribe Placebo","Admit to Hospice", "Discharge"]
+const medical_directives: Array = ["Prescribe Pill A","Prescribe Pill ___","Prescribe Pill C","Prescribe Pill ___","Prescribe Placebo","Admit to Hospice", "Discharge"]
 
 var first_run = true
 var current_patients: Dictionary
